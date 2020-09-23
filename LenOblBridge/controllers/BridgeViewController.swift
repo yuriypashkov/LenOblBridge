@@ -21,7 +21,7 @@ class BridgeViewController: UIViewController {
         print("TAP")
     }
     
-    var currentBridge: BridgeObject!
+    var currentBridge: Bridge!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +30,16 @@ class BridgeViewController: UIViewController {
     
     func setupLabels() {
         bridgeTitleLabel.text = currentBridge.title
-        photoImageView.image = UIImage(named: currentBridge.mainImageName)
+        photoImageView.image = UIImage(named: "tempImage")
+        photoImageView.lazyImageDownload(url: currentBridge.mainImageURL!)
         foundationValueLabel.text = currentBridge.year
         architectValueLabel.text = currentBridge.architect
         aboutLabel.text = currentBridge.about
         tripLabel.text = currentBridge.road
+        waterValueLabel.text = currentBridge.river
+        lengthValueLabel.text = currentBridge.length
+        widthValueLabel.text = currentBridge.width
+        engineerValueLabel.text = currentBridge.engineer
     }
 
 

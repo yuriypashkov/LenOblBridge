@@ -14,11 +14,9 @@
 		21F48CFF250040D4005E2646 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21F48CFE250040D4005E2646 /* Assets.xcassets */; };
 		21F48D02250040D4005E2646 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21F48D00250040D4005E2646 /* LaunchScreen.storyboard */; };
 		21F48D0E2500465F005E2646 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F48D0D2500465F005E2646 /* TableCell.swift */; };
-		21F48D1325004F84005E2646 /* BridgeObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F48D1225004F84005E2646 /* BridgeObject.swift */; };
-		21F48D1525005005005E2646 /* BridgesBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F48D1425005005005E2646 /* BridgesBank.swift */; };
 		21FA9766251173DD001927E1 /* BridgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA9765251173DD001927E1 /* BridgeViewController.swift */; };
-		21FA97682513F3DD001927E1 /* AboutTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA97672513F3DD001927E1 /* AboutTexts.swift */; };
 		21FA976A251BD0D2001927E1 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA9769251BD0D2001927E1 /* Bridge.swift */; };
+		21FA976E251C04EE001927E1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA976D251C04EE001927E1 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,11 +29,9 @@
 		21F48D01250040D4005E2646 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21F48D03250040D4005E2646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21F48D0D2500465F005E2646 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
-		21F48D1225004F84005E2646 /* BridgeObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeObject.swift; sourceTree = "<group>"; };
-		21F48D1425005005005E2646 /* BridgesBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgesBank.swift; sourceTree = "<group>"; };
 		21FA9765251173DD001927E1 /* BridgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeViewController.swift; sourceTree = "<group>"; };
-		21FA97672513F3DD001927E1 /* AboutTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTexts.swift; sourceTree = "<group>"; };
 		21FA9769251BD0D2001927E1 /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
+		21FA976D251C04EE001927E1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				21F48CF5250040D2005E2646 /* AppDelegate.swift */,
-				21FA97672513F3DD001927E1 /* AboutTexts.swift */,
 				21F48CF7250040D2005E2646 /* SceneDelegate.swift */,
 				21F48D00250040D4005E2646 /* LaunchScreen.storyboard */,
+				21FA976D251C04EE001927E1 /* Extensions.swift */,
 			);
 			path = supportFiles;
 			sourceTree = "<group>";
@@ -93,9 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				21F48D0D2500465F005E2646 /* TableCell.swift */,
-				21F48D1225004F84005E2646 /* BridgeObject.swift */,
 				21FA9769251BD0D2001927E1 /* Bridge.swift */,
-				21F48D1425005005005E2646 /* BridgesBank.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -183,12 +177,10 @@
 				21F48CFA250040D2005E2646 /* MainViewController.swift in Sources */,
 				21FA9766251173DD001927E1 /* BridgeViewController.swift in Sources */,
 				21F48CF6250040D2005E2646 /* AppDelegate.swift in Sources */,
-				21F48D1525005005005E2646 /* BridgesBank.swift in Sources */,
 				21F48D0E2500465F005E2646 /* TableCell.swift in Sources */,
+				21FA976E251C04EE001927E1 /* Extensions.swift in Sources */,
 				21FA976A251BD0D2001927E1 /* Bridge.swift in Sources */,
 				21F48CF8250040D2005E2646 /* SceneDelegate.swift in Sources */,
-				21FA97682513F3DD001927E1 /* AboutTexts.swift in Sources */,
-				21F48D1325004F84005E2646 /* BridgeObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
