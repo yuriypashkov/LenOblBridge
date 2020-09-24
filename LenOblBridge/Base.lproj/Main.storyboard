@@ -52,6 +52,7 @@
                                                 <constraint firstItem="mHw-Xi-ZVh" firstAttribute="leading" secondItem="yI9-lL-wpg" secondAttribute="leading" constant="5" id="uJT-dT-KXv"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="mainImage" destination="mHw-Xi-ZVh" id="BYj-FL-1WG"/>
                                             <outlet property="titleLabel" destination="wnz-uD-4jg" id="ao2-2y-cEH"/>
@@ -64,7 +65,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="GMo-nB-bS1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IFj-dr-IFR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GMo-nB-bS1" secondAttribute="trailing" id="T7a-tV-My3"/>
@@ -381,7 +382,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="0At-l0-3k3" firstAttribute="bottom" secondItem="hL7-7K-ryv" secondAttribute="bottom" id="Fo1-bP-F5Y"/>
                             <constraint firstItem="hL7-7K-ryv" firstAttribute="leading" secondItem="0At-l0-3k3" secondAttribute="leading" id="dJu-UY-wAA"/>

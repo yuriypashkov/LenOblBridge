@@ -17,6 +17,8 @@
 		21FA9766251173DD001927E1 /* BridgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA9765251173DD001927E1 /* BridgeViewController.swift */; };
 		21FA976A251BD0D2001927E1 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA9769251BD0D2001927E1 /* Bridge.swift */; };
 		21FA976E251C04EE001927E1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA976D251C04EE001927E1 /* Extensions.swift */; };
+		21FA9771251CEC4C001927E1 /* FullScreenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA976F251CEC4C001927E1 /* FullScreenImageViewController.swift */; };
+		21FA9772251CEC4C001927E1 /* FullScreenImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21FA9770251CEC4C001927E1 /* FullScreenImageViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		21FA9765251173DD001927E1 /* BridgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeViewController.swift; sourceTree = "<group>"; };
 		21FA9769251BD0D2001927E1 /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
 		21FA976D251C04EE001927E1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		21FA976F251CEC4C001927E1 /* FullScreenImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageViewController.swift; sourceTree = "<group>"; };
+		21FA9770251CEC4C001927E1 /* FullScreenImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullScreenImageViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 				21F48D09250040E2005E2646 /* supportFiles */,
 				21F48D11250046BB005E2646 /* controllers */,
 				21F48CFB250040D2005E2646 /* Main.storyboard */,
+				21FA9770251CEC4C001927E1 /* FullScreenImageViewController.xib */,
 				21F48D0C2500460E005E2646 /* models */,
 				21F48CFE250040D4005E2646 /* Assets.xcassets */,
 				21F48D03250040D4005E2646 /* Info.plist */,
@@ -99,6 +104,7 @@
 			children = (
 				21F48CF9250040D2005E2646 /* MainViewController.swift */,
 				21FA9765251173DD001927E1 /* BridgeViewController.swift */,
+				21FA976F251CEC4C001927E1 /* FullScreenImageViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -162,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21F48D02250040D4005E2646 /* LaunchScreen.storyboard in Resources */,
+				21FA9772251CEC4C001927E1 /* FullScreenImageViewController.xib in Resources */,
 				21F48CFF250040D4005E2646 /* Assets.xcassets in Resources */,
 				21F48CFD250040D2005E2646 /* Main.storyboard in Resources */,
 			);
@@ -177,6 +184,7 @@
 				21F48CFA250040D2005E2646 /* MainViewController.swift in Sources */,
 				21FA9766251173DD001927E1 /* BridgeViewController.swift in Sources */,
 				21F48CF6250040D2005E2646 /* AppDelegate.swift in Sources */,
+				21FA9771251CEC4C001927E1 /* FullScreenImageViewController.swift in Sources */,
 				21F48D0E2500465F005E2646 /* TableCell.swift in Sources */,
 				21FA976E251C04EE001927E1 /* Extensions.swift in Sources */,
 				21FA976A251BD0D2001927E1 /* Bridge.swift in Sources */,

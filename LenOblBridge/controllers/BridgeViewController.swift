@@ -25,8 +25,21 @@ class BridgeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //navigationController?.hidesBarsOnTap = true
         setupLabels()
+        
+        photoImageView.isUserInteractionEnabled = true
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        photoImageView.addGestureRecognizer(tapGestureRecognizer)
     }
+    
+    @objc func imageTapped(_ sender: UITapGestureRecognizer) {
+        let fullSizeVC = FullScreenImageViewController()
+        //fullSizeVC.imageUrl = currentBridge.mainImageURL
+        fullSizeVC.imageToShow = photoImageView.image
+        self.navigationController?.pushViewController(fullSizeVC, animated: true)
+    }
+
     
     func setupLabels() {
         bridgeTitleLabel.text = currentBridge.title

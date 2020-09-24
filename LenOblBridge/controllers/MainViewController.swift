@@ -10,7 +10,9 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let urlString = "http://localhost:3000/bridges"
+        navigationController?.navigationBar.tintColor = .black
+        
+        let urlString = "https://5daad02998ba.ngrok.io/bridges"
         guard let url = URL(string: urlString) else {return}
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             do {
@@ -24,9 +26,7 @@ class MainViewController: UIViewController {
             }
         }
         task.resume()
-
     }
-
 
 }
 
