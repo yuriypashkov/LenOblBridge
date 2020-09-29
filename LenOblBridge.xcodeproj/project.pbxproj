@@ -19,6 +19,7 @@
 		21FA976E251C04EE001927E1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA976D251C04EE001927E1 /* Extensions.swift */; };
 		21FA9771251CEC4C001927E1 /* FullScreenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA976F251CEC4C001927E1 /* FullScreenImageViewController.swift */; };
 		21FA9772251CEC4C001927E1 /* FullScreenImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21FA9770251CEC4C001927E1 /* FullScreenImageViewController.xib */; };
+		21FA9774251E2ABF001927E1 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA9773251E2ABF001927E1 /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		21FA976D251C04EE001927E1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		21FA976F251CEC4C001927E1 /* FullScreenImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageViewController.swift; sourceTree = "<group>"; };
 		21FA9770251CEC4C001927E1 /* FullScreenImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullScreenImageViewController.xib; sourceTree = "<group>"; };
+		21FA9773251E2ABF001927E1 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			children = (
 				21F48D0D2500465F005E2646 /* TableCell.swift */,
 				21FA9769251BD0D2001927E1 /* Bridge.swift */,
+				21FA9773251E2ABF001927E1 /* ImageLoader.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				21F48CF6250040D2005E2646 /* AppDelegate.swift in Sources */,
 				21FA9771251CEC4C001927E1 /* FullScreenImageViewController.swift in Sources */,
 				21F48D0E2500465F005E2646 /* TableCell.swift in Sources */,
+				21FA9774251E2ABF001927E1 /* ImageLoader.swift in Sources */,
 				21FA976E251C04EE001927E1 /* Extensions.swift in Sources */,
 				21FA976A251BD0D2001927E1 /* Bridge.swift in Sources */,
 				21F48CF8250040D2005E2646 /* SceneDelegate.swift in Sources */,

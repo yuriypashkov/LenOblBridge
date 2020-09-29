@@ -25,12 +25,15 @@ class BridgeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //navigationController?.hidesBarsOnTap = true
         setupLabels()
         
         photoImageView.isUserInteractionEnabled = true
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
         photoImageView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.hidesBarsOnTap = false
     }
     
     @objc func imageTapped(_ sender: UITapGestureRecognizer) {
@@ -43,8 +46,9 @@ class BridgeViewController: UIViewController {
     
     func setupLabels() {
         bridgeTitleLabel.text = currentBridge.title
-        photoImageView.image = UIImage(named: "tempImage")
-        photoImageView.lazyImageDownload(url: currentBridge.mainImageURL!)
+//        photoImageView.image = UIImage(named: "tempImage")
+//        photoImageView.lazyImageDownload(url: currentBridge.mainImageURL!)
+//        if let url = URL(string: currentBridge.mainImageURL!) { photoImageView.loadImageWithUrl(url: url) }
         foundationValueLabel.text = currentBridge.year
         architectValueLabel.text = currentBridge.architect
         aboutLabel.text = currentBridge.about

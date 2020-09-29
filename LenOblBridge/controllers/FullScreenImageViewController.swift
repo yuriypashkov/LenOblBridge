@@ -10,6 +10,7 @@ class FullScreenImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.hidesBarsOnTap = true
         imageView.image = imageToShow!
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "Назад", style: .plain, target: nil, action: nil)
     }
