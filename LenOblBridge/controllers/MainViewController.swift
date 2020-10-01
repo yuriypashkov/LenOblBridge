@@ -6,18 +6,27 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     var parsedBridges = [Bridge]()
+    let loadingVC = LoadingViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = .black
         
-        let urlString = "https://dfe8e1d87f58.ngrok.io/bridges"
+        let rootVC = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+        loadingVC.modalPresentationStyle = .fullScreen
+        rootVC?.rootViewController?.present(loadingVC, animated: false, completion: nil)
+        
+        let urlString = "https://bc1ead5fb10d.ngrok.io/bridges"
         guard let url = URL(string: urlString) else {return}
+        
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             do {
+                
                 self.parsedBridges = try JSONDecoder().decode([Bridge].self, from: data!)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    
+                    self.loadingVC.dismiss(animated: false, completion: nil)
                 }
             }
             catch {

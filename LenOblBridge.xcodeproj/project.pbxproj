@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,10 +19,13 @@
 		21FA976E251C04EE001927E1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA976D251C04EE001927E1 /* Extensions.swift */; };
 		21FA9771251CEC4C001927E1 /* FullScreenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA976F251CEC4C001927E1 /* FullScreenImageViewController.swift */; };
 		21FA9772251CEC4C001927E1 /* FullScreenImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21FA9770251CEC4C001927E1 /* FullScreenImageViewController.xib */; };
-		21FA9774251E2ABF001927E1 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA9773251E2ABF001927E1 /* ImageLoader.swift */; };
+		21FA977925249F1C001927E1 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA977725249F1C001927E1 /* LoadingViewController.swift */; };
+		21FA977A25249F1C001927E1 /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21FA977825249F1C001927E1 /* LoadingViewController.xib */; };
+		6049CB66BF9744E9254FE13D /* Pods_LenOblBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892D597C0DB81027529C293C /* Pods_LenOblBridge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F3071023D0D70CBCE2336AA /* Pods-LenOblBridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LenOblBridge.release.xcconfig"; path = "Target Support Files/Pods-LenOblBridge/Pods-LenOblBridge.release.xcconfig"; sourceTree = "<group>"; };
 		21F48CF2250040D2005E2646 /* LenOblBridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LenOblBridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21F48CF5250040D2005E2646 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21F48CF7250040D2005E2646 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +40,10 @@
 		21FA976D251C04EE001927E1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		21FA976F251CEC4C001927E1 /* FullScreenImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageViewController.swift; sourceTree = "<group>"; };
 		21FA9770251CEC4C001927E1 /* FullScreenImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullScreenImageViewController.xib; sourceTree = "<group>"; };
-		21FA9773251E2ABF001927E1 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		21FA977725249F1C001927E1 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		21FA977825249F1C001927E1 /* LoadingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
+		329358CCB52E27082F6D5FD9 /* Pods-LenOblBridge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LenOblBridge.debug.xcconfig"; path = "Target Support Files/Pods-LenOblBridge/Pods-LenOblBridge.debug.xcconfig"; sourceTree = "<group>"; };
+		892D597C0DB81027529C293C /* Pods_LenOblBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LenOblBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6049CB66BF9744E9254FE13D /* Pods_LenOblBridge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +63,8 @@
 			children = (
 				21F48CF4250040D2005E2646 /* LenOblBridge */,
 				21F48CF3250040D2005E2646 /* Products */,
+				67549096D431EBF3914E07F6 /* Pods */,
+				8411EC523AA6E3AAF3C34FC2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,10 +82,10 @@
 				21F48D09250040E2005E2646 /* supportFiles */,
 				21F48D11250046BB005E2646 /* controllers */,
 				21F48CFB250040D2005E2646 /* Main.storyboard */,
-				21FA9770251CEC4C001927E1 /* FullScreenImageViewController.xib */,
 				21F48D0C2500460E005E2646 /* models */,
 				21F48CFE250040D4005E2646 /* Assets.xcassets */,
 				21F48D03250040D4005E2646 /* Info.plist */,
+				21FA977B2524A566001927E1 /* xib */,
 			);
 			path = LenOblBridge;
 			sourceTree = "<group>";
@@ -97,7 +106,6 @@
 			children = (
 				21F48D0D2500465F005E2646 /* TableCell.swift */,
 				21FA9769251BD0D2001927E1 /* Bridge.swift */,
-				21FA9773251E2ABF001927E1 /* ImageLoader.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -106,10 +114,37 @@
 			isa = PBXGroup;
 			children = (
 				21F48CF9250040D2005E2646 /* MainViewController.swift */,
+				21FA977725249F1C001927E1 /* LoadingViewController.swift */,
 				21FA9765251173DD001927E1 /* BridgeViewController.swift */,
 				21FA976F251CEC4C001927E1 /* FullScreenImageViewController.swift */,
 			);
 			path = controllers;
+			sourceTree = "<group>";
+		};
+		21FA977B2524A566001927E1 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				21FA9770251CEC4C001927E1 /* FullScreenImageViewController.xib */,
+				21FA977825249F1C001927E1 /* LoadingViewController.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		67549096D431EBF3914E07F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				329358CCB52E27082F6D5FD9 /* Pods-LenOblBridge.debug.xcconfig */,
+				1F3071023D0D70CBCE2336AA /* Pods-LenOblBridge.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8411EC523AA6E3AAF3C34FC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				892D597C0DB81027529C293C /* Pods_LenOblBridge.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,9 +154,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21F48D06250040D4005E2646 /* Build configuration list for PBXNativeTarget "LenOblBridge" */;
 			buildPhases = (
+				5D96A33E9532FD3451B9736C /* [CP] Check Pods Manifest.lock */,
 				21F48CEE250040D2005E2646 /* Sources */,
 				21F48CEF250040D2005E2646 /* Frameworks */,
 				21F48CF0250040D2005E2646 /* Resources */,
+				BCBCF1D30414F7CE708E543E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -174,10 +211,53 @@
 				21FA9772251CEC4C001927E1 /* FullScreenImageViewController.xib in Resources */,
 				21F48CFF250040D4005E2646 /* Assets.xcassets in Resources */,
 				21F48CFD250040D2005E2646 /* Main.storyboard in Resources */,
+				21FA977A25249F1C001927E1 /* LoadingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5D96A33E9532FD3451B9736C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LenOblBridge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCBCF1D30414F7CE708E543E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LenOblBridge/Pods-LenOblBridge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LenOblBridge/Pods-LenOblBridge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LenOblBridge/Pods-LenOblBridge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		21F48CEE250040D2005E2646 /* Sources */ = {
@@ -189,7 +269,7 @@
 				21F48CF6250040D2005E2646 /* AppDelegate.swift in Sources */,
 				21FA9771251CEC4C001927E1 /* FullScreenImageViewController.swift in Sources */,
 				21F48D0E2500465F005E2646 /* TableCell.swift in Sources */,
-				21FA9774251E2ABF001927E1 /* ImageLoader.swift in Sources */,
+				21FA977925249F1C001927E1 /* LoadingViewController.swift in Sources */,
 				21FA976E251C04EE001927E1 /* Extensions.swift in Sources */,
 				21FA976A251BD0D2001927E1 /* Bridge.swift in Sources */,
 				21F48CF8250040D2005E2646 /* SceneDelegate.swift in Sources */,
@@ -334,6 +414,7 @@
 		};
 		21F48D07250040D4005E2646 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 329358CCB52E27082F6D5FD9 /* Pods-LenOblBridge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -353,6 +434,7 @@
 		};
 		21F48D08250040D4005E2646 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F3071023D0D70CBCE2336AA /* Pods-LenOblBridge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -38,7 +38,6 @@ class BridgeViewController: UIViewController {
     
     @objc func imageTapped(_ sender: UITapGestureRecognizer) {
         let fullSizeVC = FullScreenImageViewController()
-        //fullSizeVC.imageUrl = currentBridge.mainImageURL
         fullSizeVC.imageToShow = photoImageView.image
         self.navigationController?.pushViewController(fullSizeVC, animated: true)
     }
@@ -46,9 +45,10 @@ class BridgeViewController: UIViewController {
     
     func setupLabels() {
         bridgeTitleLabel.text = currentBridge.title
-//        photoImageView.image = UIImage(named: "tempImage")
-//        photoImageView.lazyImageDownload(url: currentBridge.mainImageURL!)
-//        if let url = URL(string: currentBridge.mainImageURL!) { photoImageView.loadImageWithUrl(url: url) }
+        if let url = URL(string: currentBridge.mainImageURL!) {
+            photoImageView.kf.indicatorType = .activity
+            photoImageView.kf.setImage(with: url)
+        }
         foundationValueLabel.text = currentBridge.year
         architectValueLabel.text = currentBridge.architect
         aboutLabel.text = currentBridge.about

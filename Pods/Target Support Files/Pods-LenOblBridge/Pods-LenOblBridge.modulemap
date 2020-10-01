@@ -1,0 +1,6 @@
+framework module Pods_LenOblBridge {
+  umbrella header "Pods-LenOblBridge-umbrella.h"
+
+  export *
+  module * { export * }
+}
