@@ -8,6 +8,7 @@ protocol MainDelegate: class {
 }
 
 class MainViewController: UIViewController, MainDelegate {
+    
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var internetErrorLabel: UILabel!
@@ -16,6 +17,7 @@ class MainViewController: UIViewController, MainDelegate {
     
     
     let bridgesModel = BridgesModel()
+    
     let activityIndicator = UIActivityIndicatorView()
     var mainRefreshControl = UIRefreshControl()
     
@@ -32,14 +34,45 @@ class MainViewController: UIViewController, MainDelegate {
     
     
     @objc func refresh(sender: UIRefreshControl) {
-        bridgesModel.loadData()
+        bridgesModel.loadData(textForSearch: "")
         sender.endRefreshing()
+    }
+    
+    // must strong IBOutlet иначе значение не возвращается после отмены поиска
+    @IBOutlet var searchButton: UIBarButtonItem!
+    @IBOutlet var infoButton: UIBarButtonItem!
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    @IBAction func searchButtonTap(_ sender: UIBarButtonItem) {
+        switch sender.tag {
+        case 0:
+            self.navigationItem.titleView = searchController.searchBar
+            self.navigationItem.leftBarButtonItem = nil
+            self.navigationItem.rightBarButtonItem = nil
+
+            searchController.hidesNavigationBarDuringPresentation = false
+            searchButton.tag = 1
+            searchButton.image = nil
+            searchButton.title = "Отмена"
+        case 1:
+            bridgesModel.loadData(textForSearch: "")
+            searchButton.image = UIImage(systemName: "magnifyingglass")
+            searchButton.tag = 0
+        default: ()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationController?.navigationBar.tintColor = .black
         bridgesModel.delegate = self
+        
+        // searchcontroller настройки
+        searchController.searchResultsUpdater = self
+        searchController.delegate = self
+        self.definesPresentationContext = true
         
         // индикатор загрузки контента
         activityIndicator.center = view.center
@@ -53,10 +86,29 @@ class MainViewController: UIViewController, MainDelegate {
 
 }
 
-extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+extension MainViewController: UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchControllerDelegate {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        print("SOME SEARCH")
+        if let searchText = searchController.searchBar.text, searchText != "" {
+            bridgesModel.loadData(textForSearch: searchText)
+            print("CALL LOAD DATA WITH TEXT: \(searchText)")
+        }
+    }
+    
+    
+    func willDismissSearchController(_ searchController: UISearchController) {
+        self.navigationItem.titleView = nil
+    }
+    
+    func didDismissSearchController(_ searchController: UISearchController) {
+        //self.navigationItem.titleView = nil
+        self.navigationItem.leftBarButtonItem = self.searchButton
+        self.navigationItem.rightBarButtonItem = self.infoButton
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let count = bridgesModel.parsedBridges else { return 0}
+        guard let count = bridgesModel.parsedBridges else { return 0 }
         //return bridgesModel.parsedBridges.count
         return count.count
     }

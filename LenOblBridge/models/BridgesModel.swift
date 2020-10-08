@@ -9,7 +9,7 @@ class BridgesModel {
     weak var delegate: MainDelegate?
     
     init() {
-       loadData()
+       loadData(textForSearch: "")
     }
     
     func asyncAction(isErrorShow: Bool, errorText: String){
@@ -19,10 +19,11 @@ class BridgesModel {
         }
     }
     
-    func loadData() {
+    func loadData(textForSearch: String) {
         
-        let urlString = "https://39420617afb9.ngrok.io/bridges"
-        guard let url = URL(string: urlString) else {return}
+        let urlString = "https://9279a56aba2a.ngrok.io/bridges?q=\(textForSearch)"
+        let codingURL = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        guard let url = URL(string: codingURL!) else {return}
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             do {
@@ -40,6 +41,13 @@ class BridgesModel {
                         switch httpResponse.statusCode {
                         case 200:
                             self.parsedBridges = try JSONDecoder().decode([Bridge].self, from: data!)
+                            // сортировка полученных данных по ID
+                            self.parsedBridges?.sort(by: { (bridgeOne, bridgeTwo) -> Bool in
+                                if let first = bridgeOne.id, let second = bridgeTwo.id {
+                                    return first < second
+                                } else { return false}
+                            })
+                            
                             DispatchQueue.main.async { self.delegate?.tableViewReload() }
                             self.asyncAction(isErrorShow: false, errorText: "")
                         case 400...406:

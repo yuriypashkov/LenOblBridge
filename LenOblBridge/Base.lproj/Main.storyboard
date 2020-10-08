@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--МОСТЫ-->
+        <!--МОСТЫ ЛЕНОБЛАСТИ-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="LenOblBridge" customModuleProvider="target" sceneMemberID="viewController">
@@ -106,11 +106,23 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="МОСТЫ" id="mC5-qg-Ek2"/>
+                    <navigationItem key="navigationItem" title="МОСТЫ ЛЕНОБЛАСТИ" id="mC5-qg-Ek2">
+                        <barButtonItem key="leftBarButtonItem" image="magnifyingglass" catalog="system" id="bXj-DT-zg3">
+                            <color key="tintColor" red="0.68191386009999999" green="0.16447029639999999" blue="0.14098960120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="searchButtonTap:" destination="BYZ-38-t0r" id="x24-2g-ynD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="hE7-Ek-eCs">
+                            <color key="tintColor" red="0.68191386009999999" green="0.16447029639999999" blue="0.14098960120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="errorView" destination="vJp-7B-oih" id="KrT-Mh-kxc"/>
                         <outlet property="errorViewLabel" destination="1XA-uB-4on" id="VJX-vC-Dsp"/>
+                        <outlet property="infoButton" destination="hE7-Ek-eCs" id="qTn-jd-4Ww"/>
                         <outlet property="internetErrorLabel" destination="KqA-rZ-9JL" id="ffl-qJ-B5u"/>
+                        <outlet property="searchButton" destination="bXj-DT-zg3" id="6KL-RJ-O2j"/>
                         <outlet property="tableView" destination="GMo-nB-bS1" id="1Th-8u-Pwa"/>
                     </connections>
                 </viewController>
@@ -466,6 +478,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
     </resources>
 </document>
