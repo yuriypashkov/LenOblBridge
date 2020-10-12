@@ -2,21 +2,6 @@
 import Foundation
 import UIKit
 
-
-
-//extension UIImageView {
-//
-//    func lazyImageDownload(url: String) {
-//        URLSession.shared.dataTask(with: URL(string: url)!) { (data, response, error) in
-//            DispatchQueue.main.async {
-//                if let data = data {self.image = UIImage(data: data)}
-//            }
-//        }.resume()
-//    }
-//    
-//
-//}
-
 extension Error {
 
     var isConnectivityError: Bool {
@@ -40,4 +25,34 @@ extension Error {
     }
 
 }
+
+extension MainViewController: UISearchControllerDelegate, UISearchBarDelegate, UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    func filterContentForSearchText(_ searchText: String) {
+        if let parsedBridges = bridgesModel.parsedBridges {
+            filteredBridges = parsedBridges.filter({ (bridge: Bridge) -> Bool in
+                return (bridge.about?.lowercased().contains(searchText.lowercased()))!
+            })
+        }
+        tableViewReload()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        tableViewReload()
+    }
+    
+    func willDismissSearchController(_ searchController: UISearchController) {
+        self.navigationItem.titleView = nil
+    }
+    
+    func didDismissSearchController(_ searchController: UISearchController) {
+        self.navigationItem.leftBarButtonItem = self.searchButton
+        self.navigationItem.rightBarButtonItem = self.infoButton
+    }
+}
+
 
