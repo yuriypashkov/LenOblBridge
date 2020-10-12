@@ -15,8 +15,17 @@ class MainViewController: UIViewController, MainDelegate {
     @IBOutlet weak var errorView: UIView!
     @IBOutlet weak var errorViewLabel: UILabel!
     
-    
+    let searchController = UISearchController(searchResultsController: nil)
     let bridgesModel = BridgesModel()
+    var filteredBridges = [Bridge]()
+    
+    var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false }
+        return text.isEmpty
+    }
+    var isFiltering: Bool {
+        return searchController.isActive && !searchBarIsEmpty
+    }
     
     let activityIndicator = UIActivityIndicatorView()
     var mainRefreshControl = UIRefreshControl()
@@ -32,15 +41,8 @@ class MainViewController: UIViewController, MainDelegate {
         errorView.alpha = (showError && isSomeContent) ? 1 : 0
     }
     
-    func createSearchButton() {
-        bridgesModel.loadData(textForSearch: "")
-        searchButton.image = UIImage(systemName: "magnifyingglass")
-        searchButton.tag = 0
-    }
-    
-    
     @objc func refresh(sender: UIRefreshControl) {
-        createSearchButton()
+        bridgesModel.loadData()
         sender.endRefreshing()
     }
     
@@ -48,25 +50,13 @@ class MainViewController: UIViewController, MainDelegate {
     @IBOutlet var searchButton: UIBarButtonItem!
     @IBOutlet var infoButton: UIBarButtonItem!
     
-    let searchController = UISearchController(searchResultsController: nil)
+    
     
     @IBAction func searchButtonTap(_ sender: UIBarButtonItem) {
-        switch sender.tag {
-        case 0:
-            self.navigationItem.titleView = searchController.searchBar
-            self.navigationItem.leftBarButtonItem = nil
-            self.navigationItem.rightBarButtonItem = nil
-
-            searchController.hidesNavigationBarDuringPresentation = false
-            
-            searchButton.tag = 1
-            searchButton.image = nil
-            searchButton.title = "Отмена"
-            
-        case 1:
-            createSearchButton()
-        default: ()
-        }
+        self.navigationItem.titleView = searchController.searchBar
+        self.navigationItem.leftBarButtonItem = nil
+        self.navigationItem.rightBarButtonItem = nil
+        searchController.hidesNavigationBarDuringPresentation = false
     }
     
     override func viewDidLoad() {
@@ -79,6 +69,7 @@ class MainViewController: UIViewController, MainDelegate {
         searchController.searchResultsUpdater = self
         searchController.delegate = self
         searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false //важное свойство чтоб нажимать на ячейки во время поиска
         self.definesPresentationContext = true
         
         // индикатор загрузки контента
@@ -93,48 +84,43 @@ class MainViewController: UIViewController, MainDelegate {
 
 }
 
-extension MainViewController: UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchControllerDelegate, UISearchBarDelegate {
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        createSearchButton()
-    }
-    
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        print("SOME SEARCH")
-        if let searchText = searchController.searchBar.text, searchText != "" {
-            bridgesModel.loadData(textForSearch: searchText)
-            //print("CALL LOAD DATA WITH TEXT: \(searchText)")
-        }
-    }
-    
-    
-    func willDismissSearchController(_ searchController: UISearchController) {
-        self.navigationItem.titleView = nil
-    }
-    
-    func didDismissSearchController(_ searchController: UISearchController) {
-        self.navigationItem.leftBarButtonItem = self.searchButton
-        self.navigationItem.rightBarButtonItem = self.infoButton
-    }
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if isFiltering {
+            return filteredBridges.count
+        }
+        
         guard let count = bridgesModel.parsedBridges else { return 0 }
-        //return bridgesModel.parsedBridges.count
         return count.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell") as! TableCell
-        cell.setData(imageName: bridgesModel.parsedBridges?[indexPath.row].previewImageURL ?? "None",
-                     title: bridgesModel.parsedBridges?[indexPath.row].title ?? "None")
+        
+        if !isFiltering {
+            cell.setData(imageName: bridgesModel.parsedBridges?[indexPath.row].previewImageURL ?? "None",
+                                     title: bridgesModel.parsedBridges?[indexPath.row].title ?? "None")}
+        else {
+            cell.setData(imageName: filteredBridges[indexPath.row].previewImageURL ?? "None",
+                                    title: filteredBridges[indexPath.row].title ?? "None")
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let bridgeViewController = storyboard.instantiateViewController(withIdentifier: "TestViewController") as? BridgeViewController else { return }
-        bridgeViewController.currentBridge = bridgesModel.parsedBridges?[indexPath.row]
+        
+        if !isFiltering {
+            bridgeViewController.currentBridge = bridgesModel.parsedBridges?[indexPath.row]
+        }
+        else {
+            bridgeViewController.currentBridge = filteredBridges[indexPath.row]
+        }
+        
         navigationController?.pushViewController(bridgeViewController, animated: true)
     }
 }

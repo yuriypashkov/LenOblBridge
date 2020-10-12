@@ -9,7 +9,7 @@ class BridgesModel {
     weak var delegate: MainDelegate?
     
     init() {
-       loadData(textForSearch: "")
+       loadData()
     }
     
     func asyncAction(isErrorShow: Bool, errorText: String){
@@ -19,9 +19,10 @@ class BridgesModel {
         }
     }
     
-    func loadData(textForSearch: String) {
-        
-        let urlString = "https://9279a56aba2a.ngrok.io/bridges?q=\(textForSearch)"
+    func loadData() {
+//      func loadData(textForSearch: String) {
+//      let urlString = "https://9279a56aba2a.ngrok.io/bridges?q=\(textForSearch)"
+        let urlString = "http://188.119.67.67:3000/bridges"
         let encodingURL = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         guard let url = URL(string: encodingURL!) else {return}
         
