@@ -32,9 +32,15 @@ class MainViewController: UIViewController, MainDelegate {
         errorView.alpha = (showError && isSomeContent) ? 1 : 0
     }
     
+    func createSearchButton() {
+        bridgesModel.loadData(textForSearch: "")
+        searchButton.image = UIImage(systemName: "magnifyingglass")
+        searchButton.tag = 0
+    }
+    
     
     @objc func refresh(sender: UIRefreshControl) {
-        bridgesModel.loadData(textForSearch: "")
+        createSearchButton()
         sender.endRefreshing()
     }
     
@@ -52,13 +58,13 @@ class MainViewController: UIViewController, MainDelegate {
             self.navigationItem.rightBarButtonItem = nil
 
             searchController.hidesNavigationBarDuringPresentation = false
+            
             searchButton.tag = 1
             searchButton.image = nil
             searchButton.title = "Отмена"
+            
         case 1:
-            bridgesModel.loadData(textForSearch: "")
-            searchButton.image = UIImage(systemName: "magnifyingglass")
-            searchButton.tag = 0
+            createSearchButton()
         default: ()
         }
     }
@@ -72,6 +78,7 @@ class MainViewController: UIViewController, MainDelegate {
         // searchcontroller настройки
         searchController.searchResultsUpdater = self
         searchController.delegate = self
+        searchController.searchBar.delegate = self
         self.definesPresentationContext = true
         
         // индикатор загрузки контента
@@ -86,13 +93,18 @@ class MainViewController: UIViewController, MainDelegate {
 
 }
 
-extension MainViewController: UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchControllerDelegate {
+extension MainViewController: UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchControllerDelegate, UISearchBarDelegate {
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        createSearchButton()
+    }
+    
     
     func updateSearchResults(for searchController: UISearchController) {
         print("SOME SEARCH")
         if let searchText = searchController.searchBar.text, searchText != "" {
             bridgesModel.loadData(textForSearch: searchText)
-            print("CALL LOAD DATA WITH TEXT: \(searchText)")
+            //print("CALL LOAD DATA WITH TEXT: \(searchText)")
         }
     }
     
@@ -102,7 +114,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, UISear
     }
     
     func didDismissSearchController(_ searchController: UISearchController) {
-        //self.navigationItem.titleView = nil
         self.navigationItem.leftBarButtonItem = self.searchButton
         self.navigationItem.rightBarButtonItem = self.infoButton
     }

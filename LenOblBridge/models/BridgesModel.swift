@@ -22,8 +22,8 @@ class BridgesModel {
     func loadData(textForSearch: String) {
         
         let urlString = "https://9279a56aba2a.ngrok.io/bridges?q=\(textForSearch)"
-        let codingURL = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        guard let url = URL(string: codingURL!) else {return}
+        let encodingURL = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        guard let url = URL(string: encodingURL!) else {return}
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             do {
