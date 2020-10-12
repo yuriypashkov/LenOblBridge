@@ -2,12 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vc6-CJ-APt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--МОСТЫ-->
+        <!--МОСТЫ ЛЕНОБЛАСТИ-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="LenOblBridge" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GMo-nB-bS1">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GMo-nB-bS1">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -64,18 +65,64 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="w7a-gn-WOz"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqA-rZ-9JL">
+                                <rect key="frame" x="30" y="448" width="354" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vJp-7B-oih" userLabel="ErrorView">
+                                <rect key="frame" x="0.0" y="88" width="414" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XA-uB-4on">
+                                        <rect key="frame" x="20" y="10" width="374" height="80"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="1XA-uB-4on" firstAttribute="top" secondItem="vJp-7B-oih" secondAttribute="top" constant="10" id="6Nf-oK-PJc"/>
+                                    <constraint firstItem="1XA-uB-4on" firstAttribute="leading" secondItem="vJp-7B-oih" secondAttribute="leading" constant="20" id="TCB-FE-wxN"/>
+                                    <constraint firstAttribute="trailing" secondItem="1XA-uB-4on" secondAttribute="trailing" constant="20" id="U7U-zv-iJd"/>
+                                    <constraint firstAttribute="bottom" secondItem="1XA-uB-4on" secondAttribute="bottom" constant="10" id="bfa-tM-L39"/>
+                                    <constraint firstAttribute="height" constant="100" id="j0a-IK-qmq"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="vJp-7B-oih" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="H6e-uq-7mM"/>
                             <constraint firstItem="GMo-nB-bS1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IFj-dr-IFR"/>
+                            <constraint firstItem="KqA-rZ-9JL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="OlF-iY-v92"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GMo-nB-bS1" secondAttribute="trailing" id="T7a-tV-My3"/>
-                            <constraint firstItem="GMo-nB-bS1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cn7-Ba-UPg"/>
+                            <constraint firstItem="vJp-7B-oih" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bAc-Vf-nMO"/>
+                            <constraint firstItem="GMo-nB-bS1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="eZc-sH-5cJ"/>
+                            <constraint firstItem="KqA-rZ-9JL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lTi-P2-5VF"/>
                             <constraint firstAttribute="bottom" secondItem="GMo-nB-bS1" secondAttribute="bottom" id="nYm-9S-0Dz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vJp-7B-oih" secondAttribute="trailing" id="qd5-AL-4Hm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KqA-rZ-9JL" secondAttribute="trailing" constant="30" id="ybg-6m-1EK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="МОСТЫ" id="mC5-qg-Ek2"/>
+                    <navigationItem key="navigationItem" title="МОСТЫ ЛЕНОБЛАСТИ" id="mC5-qg-Ek2">
+                        <barButtonItem key="leftBarButtonItem" image="magnifyingglass" catalog="system" id="bXj-DT-zg3">
+                            <color key="tintColor" red="0.68191386009999999" green="0.16447029639999999" blue="0.14098960120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="searchButtonTap:" destination="BYZ-38-t0r" id="x24-2g-ynD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="hE7-Ek-eCs">
+                            <color key="tintColor" red="0.68191386009999999" green="0.16447029639999999" blue="0.14098960120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="errorView" destination="vJp-7B-oih" id="KrT-Mh-kxc"/>
+                        <outlet property="errorViewLabel" destination="1XA-uB-4on" id="VJX-vC-Dsp"/>
+                        <outlet property="infoButton" destination="hE7-Ek-eCs" id="qTn-jd-4Ww"/>
+                        <outlet property="internetErrorLabel" destination="KqA-rZ-9JL" id="ffl-qJ-B5u"/>
+                        <outlet property="searchButton" destination="bXj-DT-zg3" id="6KL-RJ-O2j"/>
                         <outlet property="tableView" destination="GMo-nB-bS1" id="1Th-8u-Pwa"/>
                     </connections>
                 </viewController>
@@ -409,10 +456,10 @@
             </objects>
             <point key="canvasLocation" x="2150.7246376811595" y="109.82142857142857"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="rBd-mM-hUU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vc6-CJ-APt" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="vc6-CJ-APt" customClass="NavigationViewController" customModule="LenOblBridge" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2xf-sU-Wpx">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -431,6 +478,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
     </resources>
 </document>
