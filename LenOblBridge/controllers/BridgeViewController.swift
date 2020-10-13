@@ -51,8 +51,8 @@ class BridgeViewController: UIViewController {
         }
         foundationValueLabel.text = currentBridge.year
         architectValueLabel.text = currentBridge.architect
-        aboutLabel.text = currentBridge.about
-        tripLabel.text = currentBridge.road
+        aboutLabel.text = String.russianHyphenated(currentBridge.about!)()
+        tripLabel.text = String.russianHyphenated(currentBridge.road!)()
         waterValueLabel.text = currentBridge.river
         lengthValueLabel.text = currentBridge.length
         widthValueLabel.text = currentBridge.width

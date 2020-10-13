@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vc6-CJ-APt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,9 +33,9 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="wnz-uD-4jg">
-                                                    <rect key="frame" x="10" y="15" width="394" height="75"/>
+                                                    <rect key="frame" x="20" y="15" width="384" height="36"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="75" id="0Jm-AA-Hrh"/>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="75" id="0Jm-AA-Hrh"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                     <color key="textColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -46,7 +45,7 @@
                                             <constraints>
                                                 <constraint firstItem="wnz-uD-4jg" firstAttribute="top" secondItem="yI9-lL-wpg" secondAttribute="top" constant="15" id="7lF-G9-zVc"/>
                                                 <constraint firstAttribute="bottom" secondItem="mHw-Xi-ZVh" secondAttribute="bottom" constant="5" id="8G5-ps-fcJ"/>
-                                                <constraint firstItem="wnz-uD-4jg" firstAttribute="leading" secondItem="yI9-lL-wpg" secondAttribute="leading" constant="10" id="SnG-Ln-Zye"/>
+                                                <constraint firstItem="wnz-uD-4jg" firstAttribute="leading" secondItem="yI9-lL-wpg" secondAttribute="leading" constant="20" id="SnG-Ln-Zye"/>
                                                 <constraint firstAttribute="trailing" secondItem="mHw-Xi-ZVh" secondAttribute="trailing" constant="5" id="UfC-jf-zn1"/>
                                                 <constraint firstItem="mHw-Xi-ZVh" firstAttribute="top" secondItem="yI9-lL-wpg" secondAttribute="top" constant="5" id="Wmk-fH-5q3"/>
                                                 <constraint firstAttribute="trailing" secondItem="wnz-uD-4jg" secondAttribute="trailing" constant="10" id="ere-5P-bv8"/>
@@ -369,7 +368,7 @@
                                                                 <color key="textColor" red="0.68191386010362698" green="0.16447029635399196" blue="0.14098960121370707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AboutLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSF-SX-CCd">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AboutLabel" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSF-SX-CCd">
                                                                 <rect key="frame" x="0.0" y="32" width="384" height="20"/>
                                                                 <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
@@ -382,7 +381,7 @@
                                                                 <color key="textColor" red="0.68191386009999999" green="0.16447029639999999" blue="0.14098960120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeW-Dm-plh">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeW-Dm-plh">
                                                                 <rect key="frame" x="0.0" y="94" width="384" height="20"/>
                                                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                                                 <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

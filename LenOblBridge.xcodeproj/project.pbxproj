@@ -27,7 +27,7 @@
 /* Begin PBXFileReference section */
 		1F3071023D0D70CBCE2336AA /* Pods-LenOblBridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LenOblBridge.release.xcconfig"; path = "Target Support Files/Pods-LenOblBridge/Pods-LenOblBridge.release.xcconfig"; sourceTree = "<group>"; };
 		2104E235252745E6003B80B5 /* BridgesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgesModel.swift; sourceTree = "<group>"; };
-		21F48CF2250040D2005E2646 /* LenOblBridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LenOblBridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21F48CF2250040D2005E2646 /* Мосты Ленобласти.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Мосты Ленобласти.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21F48CF5250040D2005E2646 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21F48CF7250040D2005E2646 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		21F48CF9250040D2005E2646 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 		21F48CF3250040D2005E2646 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				21F48CF2250040D2005E2646 /* LenOblBridge.app */,
+				21F48CF2250040D2005E2646 /* Мосты Ленобласти.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 			);
 			name = LenOblBridge;
 			productName = LenOblBridge;
-			productReference = 21F48CF2250040D2005E2646 /* LenOblBridge.app */;
+			productReference = 21F48CF2250040D2005E2646 /* Мосты Ленобласти.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -426,7 +426,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.myOrg.LenOblBridge;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Мосты Ленобласти";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -446,7 +446,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.myOrg.LenOblBridge;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Мосты Ленобласти";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
