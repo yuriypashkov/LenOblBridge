@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2104E236252745E6003B80B5 /* BridgesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2104E235252745E6003B80B5 /* BridgesModel.swift */; };
+		21465E6E253721D100910C86 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21465E6D253721D100910C86 /* InfoViewController.swift */; };
 		21F48CF6250040D2005E2646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F48CF5250040D2005E2646 /* AppDelegate.swift */; };
 		21F48CF8250040D2005E2646 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F48CF7250040D2005E2646 /* SceneDelegate.swift */; };
 		21F48CFA250040D2005E2646 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F48CF9250040D2005E2646 /* MainViewController.swift */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		1F3071023D0D70CBCE2336AA /* Pods-LenOblBridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LenOblBridge.release.xcconfig"; path = "Target Support Files/Pods-LenOblBridge/Pods-LenOblBridge.release.xcconfig"; sourceTree = "<group>"; };
 		2104E235252745E6003B80B5 /* BridgesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgesModel.swift; sourceTree = "<group>"; };
+		21465E6D253721D100910C86 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		21F48CF2250040D2005E2646 /* Мосты Ленобласти.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Мосты Ленобласти.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21F48CF5250040D2005E2646 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21F48CF7250040D2005E2646 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				21FA977E252610F8001927E1 /* NavigationViewController.swift */,
 				21FA9765251173DD001927E1 /* BridgeViewController.swift */,
 				21FA976F251CEC4C001927E1 /* FullScreenImageViewController.swift */,
+				21465E6D253721D100910C86 /* InfoViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -176,7 +179,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Yuriy Pashkov";
 				TargetAttributes = {
 					21F48CF1250040D2005E2646 = {
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21F48CFA250040D2005E2646 /* MainViewController.swift in Sources */,
+				21465E6E253721D100910C86 /* InfoViewController.swift in Sources */,
 				21FA9766251173DD001927E1 /* BridgeViewController.swift in Sources */,
 				21F48CF6250040D2005E2646 /* AppDelegate.swift in Sources */,
 				21FA9771251CEC4C001927E1 /* FullScreenImageViewController.swift in Sources */,
@@ -324,6 +328,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -348,7 +353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -384,6 +389,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -402,7 +408,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -420,7 +426,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4524FJSV52;
 				INFOPLIST_FILE = LenOblBridge/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -440,7 +446,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4524FJSV52;
 				INFOPLIST_FILE = LenOblBridge/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

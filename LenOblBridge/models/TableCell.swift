@@ -12,7 +12,7 @@ class TableCell: UITableViewCell {
             mainImage.kf.indicatorType = .activity
             mainImage.kf.setImage(with: url)
         }
-        mainImage.layer.cornerRadius = 15.0
+        mainImage.layer.cornerRadius = 10.0
         titleLabel.text = title
     }
 
