@@ -57,12 +57,12 @@ class MainViewController: UIViewController, MainDelegate {
         self.navigationItem.leftBarButtonItem = nil
         self.navigationItem.rightBarButtonItem = nil
         searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.becomeFirstResponder()
     }
     
     @IBAction func infoButtonTap(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let infoViewController = storyboard.instantiateViewController(withIdentifier: "InfoViewController")
-        //infoViewController.modalPresentationStyle = .fullScreen
         present(infoViewController, animated: true, completion: nil)
     }
     
@@ -76,6 +76,7 @@ class MainViewController: UIViewController, MainDelegate {
         searchController.searchResultsUpdater = self
         searchController.delegate = self
         searchController.searchBar.delegate = self
+        searchController.searchBar.setValue("Отмена", forKey: "cancelButtonText")
         searchController.obscuresBackgroundDuringPresentation = false //важное свойство чтоб нажимать на ячейки во время поиска
         self.definesPresentationContext = true
         

@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,7 +19,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GMo-nB-bS1">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <color key="backgroundColor" red="0.32549019610000002" green="0.12549019610000001" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TableCell" rowHeight="200" id="YSS-dV-ZaW" customClass="TableCell" customModule="Мосты_Ленобласти" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="200"/>
@@ -34,27 +34,35 @@
                                                         <constraint firstAttribute="height" constant="200" id="Wzu-m6-krH"/>
                                                     </constraints>
                                                 </imageView>
+                                                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ba6-c0-zuO">
+                                                    <rect key="frame" x="5" y="5" width="404" height="190"/>
+                                                    <color key="backgroundColor" red="0.32549019610000002" green="0.12549019610000001" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="wnz-uD-4jg">
                                                     <rect key="frame" x="20" y="15" width="384" height="36"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="75" id="0Jm-AA-Hrh"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                                    <color key="textColor" systemColor="tertiarySystemBackgroundColor"/>
+                                                    <color key="textColor" red="0.98823529409999999" green="0.99607843139999996" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Ba6-c0-zuO" firstAttribute="centerX" secondItem="yI9-lL-wpg" secondAttribute="centerX" id="4vw-WN-097"/>
                                                 <constraint firstItem="wnz-uD-4jg" firstAttribute="top" secondItem="yI9-lL-wpg" secondAttribute="top" constant="15" id="7lF-G9-zVc"/>
                                                 <constraint firstAttribute="bottom" secondItem="mHw-Xi-ZVh" secondAttribute="bottom" constant="5" id="8G5-ps-fcJ"/>
+                                                <constraint firstItem="Ba6-c0-zuO" firstAttribute="width" secondItem="mHw-Xi-ZVh" secondAttribute="width" id="Ovd-BD-S8J"/>
                                                 <constraint firstItem="wnz-uD-4jg" firstAttribute="leading" secondItem="yI9-lL-wpg" secondAttribute="leading" constant="20" id="SnG-Ln-Zye"/>
                                                 <constraint firstAttribute="trailing" secondItem="mHw-Xi-ZVh" secondAttribute="trailing" constant="5" id="UfC-jf-zn1"/>
                                                 <constraint firstItem="mHw-Xi-ZVh" firstAttribute="top" secondItem="yI9-lL-wpg" secondAttribute="top" constant="5" id="Wmk-fH-5q3"/>
                                                 <constraint firstAttribute="trailing" secondItem="wnz-uD-4jg" secondAttribute="trailing" constant="10" id="ere-5P-bv8"/>
+                                                <constraint firstItem="Ba6-c0-zuO" firstAttribute="centerY" secondItem="yI9-lL-wpg" secondAttribute="centerY" id="rwf-3A-nOi"/>
                                                 <constraint firstItem="mHw-Xi-ZVh" firstAttribute="leading" secondItem="yI9-lL-wpg" secondAttribute="leading" constant="5" id="uJT-dT-KXv"/>
+                                                <constraint firstItem="Ba6-c0-zuO" firstAttribute="height" secondItem="mHw-Xi-ZVh" secondAttribute="height" id="upc-4E-LM2"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                        <color key="backgroundColor" red="0.32549019610000002" green="0.12549019610000001" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="mainImage" destination="mHw-Xi-ZVh" id="BYj-FL-1WG"/>
                                             <outlet property="titleLabel" destination="wnz-uD-4jg" id="ao2-2y-cEH"/>
@@ -78,7 +86,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XA-uB-4on">
                                         <rect key="frame" x="20" y="10" width="374" height="80"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.98431372549019602" green="0.88627450980392153" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -93,7 +101,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                        <color key="backgroundColor" red="0.32549019607843138" green="0.12549019607843137" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="vJp-7B-oih" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="H6e-uq-7mM"/>
                             <constraint firstItem="GMo-nB-bS1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IFj-dr-IFR"/>
@@ -109,7 +117,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="МОСТЫ ЛЕНОБЛАСТИ" id="mC5-qg-Ek2">
                         <barButtonItem key="leftBarButtonItem" image="magnifyingglass" catalog="system" id="bXj-DT-zg3">
-                            <color key="tintColor" red="0.68191386009999999" green="0.16447029639999999" blue="0.14098960120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" systemColor="systemOrangeColor"/>
                             <connections>
                                 <action selector="searchButtonTap:" destination="BYZ-38-t0r" id="x24-2g-ynD"/>
                             </connections>
@@ -547,7 +555,15 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
-                        <color key="barTintColor" systemColor="systemGray4Color"/>
+                        <color key="tintColor" red="0.98431372549999996" green="0.8862745098" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.32549019610000002" green="0.12549019610000001" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.9882352941176471" green="0.99607843137254903" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textShadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -585,11 +601,11 @@
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tertiarySystemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="viewFlipsideBackgroundColor">
             <color red="0.1215686274509804" green="0.12941176470588239" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

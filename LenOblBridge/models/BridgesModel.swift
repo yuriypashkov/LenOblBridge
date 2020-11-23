@@ -39,7 +39,7 @@ class BridgesModel {
                 }
                 
                     if let httpResponse = response as? HTTPURLResponse {
-                        print("Status code: \(httpResponse.statusCode)")
+                        //print("Status code: \(httpResponse.statusCode)")
                         switch httpResponse.statusCode {
                         case 200:
                             self.parsedBridges = try JSONDecoder().decode([Bridge].self, from: data!)
@@ -49,6 +49,9 @@ class BridgesModel {
                                     return first < second
                                 } else { return false}
                             })
+//                            self.parsedBridges?.sort {
+//                                $0.id! > $1.id!
+//                            }
                             
                             DispatchQueue.main.async { self.delegate?.tableViewReload() }
                             self.asyncAction(isErrorShow: false, errorText: "")
