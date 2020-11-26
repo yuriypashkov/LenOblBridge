@@ -8,7 +8,7 @@
 import Kingfisher
 import UIKit
 
-class TestTableCell: UITableViewCell {
+class MainTableCell: UITableViewCell {
 
     @IBOutlet weak var mainImage: UIImageView!
     
@@ -41,7 +41,7 @@ extension UITableViewCell {
                 if #available(iOS 13.0, *) {
                     self.contentView.backgroundColor = .secondarySystemBackground
                 } else {
-                    self.contentView.backgroundColor = .clear
+                    self.contentView.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.97, alpha: 1.00)
                 }
             }
         }

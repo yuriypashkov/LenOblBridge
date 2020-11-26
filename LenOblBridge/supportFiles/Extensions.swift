@@ -2,19 +2,16 @@
 import Foundation
 import UIKit
 
+// расширение для отрисовки градиентов
 extension CAGradientLayer {
     
     class func primaryGradient(on view: UIView) -> UIImage? {
         let gradient = CAGradientLayer()
-        //let flareRed = UIColor(displayP3Red: 241.0/255.0, green: 39.0/255.0, blue: 17.0/255.0, alpha: 1.0)
-        //let flareOrange = UIColor(displayP3Red: 245.0/255.0, green: 175.0/255.0, blue: 25.0/255.0, alpha: 1.0)
         let colorOne = UIColor(red: 0.56, green: 0.62, blue: 0.67, alpha: 1.00)
         let colorTwo = UIColor(red: 0.93, green: 0.95, blue: 0.95, alpha: 1.00)
-        //let colorThree = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
         var bounds = view.bounds
         bounds.size.height += UIApplication.shared.statusBarFrame.size.height
         gradient.frame = bounds
-        //gradient.colors = [flareRed.cgColor, flareOrange.cgColor]
         gradient.colors = [colorOne.cgColor, colorTwo.cgColor]
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 1, y: 0)

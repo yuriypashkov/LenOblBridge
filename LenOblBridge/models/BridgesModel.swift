@@ -20,10 +20,7 @@ class BridgesModel {
     }
     
     func loadData() {
-//      func loadData(textForSearch: String) {
-//      let urlString = "https://9279a56aba2a.ngrok.io/bridges?q=\(textForSearch)"
         let urlString = "http://188.119.67.67:3000/bridges"
-       // let urlString = "https://cc01a0f76d91.ngrok.io/bridges"
         let encodingURL = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         guard let url = URL(string: encodingURL!) else {return}
         

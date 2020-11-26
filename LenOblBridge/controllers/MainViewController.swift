@@ -59,57 +59,20 @@ class MainViewController: UIViewController, MainDelegate {
         searchController.searchBar.becomeFirstResponder()
     }
     
-//    @objc func searchTap(){
-//        self.navigationItem.titleView = searchController.searchBar
-//        self.navigationItem.leftBarButtonItem = nil
-//        self.navigationItem.rightBarButtonItem = nil
-//        searchController.hidesNavigationBarDuringPresentation = false
-//        searchController.searchBar.becomeFirstResponder()
-//    }
-    
     @IBAction func infoButtonTap(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let infoViewController = storyboard.instantiateViewController(withIdentifier: "InfoViewController")
-        present(infoViewController, animated: true, completion: nil)
+        //present(infoViewController, animated: true, completion: nil)
+        navigationController?.pushViewController(infoViewController, animated: true)
     }
-    
-    // метод для перерисовки грабиента навибара при повороте экрана
-//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-//        super.viewWillTransition(to: size, with: coordinator)
-//        coordinator.animate(alongsideTransition: nil) { (_) in
-//            guard let navigationController = self.navigationController, let gradientImage = CAGradientLayer.primaryGradient(on: navigationController.navigationBar) else {return}
-//            navigationController.navigationBar.barTintColor = UIColor(patternImage: gradientImage)
-//            self.tableView.backgroundColor = UIColor(patternImage: gradientImage)
-//            self.view.backgroundColor = UIColor(patternImage: gradientImage)
-//            self.tableView.reloadData()
-//        }
-//
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 13.0, *) {} else {
+            navigationItem.leftBarButtonItem?.image = UIImage(named: "search35px")
+            navigationItem.rightBarButtonItem?.image = UIImage(named: "info35px")
+        }
         
-//        for family: String in UIFont.familyNames {
-//                print("\(family)")
-//                for names: String in UIFont.fontNames(forFamilyName: family) {
-//                    print("== \(names)")
-//                }
-//            }
-        
-//        self.navigationItem.leftBarButtonItem = nil
-//        let button = UIButton(type: .custom)
-//        button.setImage(UIImage (named: "search2"), for: .normal)
-//        button.frame = CGRect(x: 0.0, y: 0.0, width: 35.0, height: 35.0)
-//        button.addTarget(self, action: #selector(searchTap), for: .touchUpInside)
-//        let barButtonItem = UIBarButtonItem(customView: button)
-//        self.navigationItem.leftBarButtonItems = [barButtonItem]
-
-//        guard let navigationController = navigationController, let gradientImage = CAGradientLayer.primaryGradient(on: navigationController.navigationBar) else {return}
-//        navigationController.navigationBar.barTintColor = UIColor(patternImage: gradientImage)
-//        tableView.backgroundColor = UIColor(patternImage: gradientImage)
-//        
-//        navigationController.navigationBar.titleTextAttributes =
-//        [NSAttributedString.Key.font: UIFont(name: "Palatino-Bold", size: 19)!]
         navigationController?.navigationBar.tintColor = UIColor(red: 0.19, green: 0.18, blue: 0.20, alpha: 1.00)
         
         bridgesModel.delegate = self
@@ -151,7 +114,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell") as! TableCell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TestTableCell") as! TestTableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableCell") as! MainTableCell
         
         if !isFiltering {
             cell.setData(imageName: bridgesModel.parsedBridges?[indexPath.row].previewImageURL ?? "None",
