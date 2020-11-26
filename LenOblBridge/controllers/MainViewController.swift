@@ -9,7 +9,6 @@ protocol MainDelegate: class {
 
 class MainViewController: UIViewController, MainDelegate {
     
-
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var internetErrorLabel: UILabel!
     @IBOutlet weak var errorView: UIView!
@@ -63,30 +62,39 @@ class MainViewController: UIViewController, MainDelegate {
     @IBAction func infoButtonTap(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let infoViewController = storyboard.instantiateViewController(withIdentifier: "InfoViewController")
-        present(infoViewController, animated: true, completion: nil)
+        //present(infoViewController, animated: true, completion: nil)
+        navigationController?.pushViewController(infoViewController, animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 13.0, *) {} else {
+            navigationItem.leftBarButtonItem?.image = UIImage(named: "search35px")
+            navigationItem.rightBarButtonItem?.image = UIImage(named: "info35px")
+        }
         
-        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.tintColor = UIColor(red: 0.19, green: 0.18, blue: 0.20, alpha: 1.00)
+        
         bridgesModel.delegate = self
         
         // searchcontroller настройки
         searchController.searchResultsUpdater = self
         searchController.delegate = self
         searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Поиск"
         searchController.searchBar.setValue("Отмена", forKey: "cancelButtonText")
         searchController.obscuresBackgroundDuringPresentation = false //важное свойство чтоб нажимать на ячейки во время поиска
         self.definesPresentationContext = true
         
         // индикатор загрузки контента
         activityIndicator.center = view.center
+        //activityIndicator.backgroundColor = .white
         activityIndicator.startAnimating()
         view.addSubview(activityIndicator)
         
         // подключаем pull refresh
         mainRefreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+        //mainRefreshControl.tintColor = .white
         tableView.refreshControl = mainRefreshControl
     }
 
@@ -105,7 +113,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell") as! TableCell
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell") as! TableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableCell") as! MainTableCell
         
         if !isFiltering {
             cell.setData(imageName: bridgesModel.parsedBridges?[indexPath.row].previewImageURL ?? "None",
@@ -128,6 +137,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         else {
             bridgeViewController.currentBridge = filteredBridges[indexPath.row]
         }
+        
+        // подсветка нажатой ячейки
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.lightningCell()
         
         navigationController?.pushViewController(bridgeViewController, animated: true)
     }

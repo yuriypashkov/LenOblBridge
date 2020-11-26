@@ -8,14 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		2104E236252745E6003B80B5 /* BridgesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2104E235252745E6003B80B5 /* BridgesModel.swift */; };
+		21200ED2256EBC6F00EE43B1 /* HeaderAboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21200ED1256EBC6F00EE43B1 /* HeaderAboutCell.swift */; };
+		21200ED5256EBC8C00EE43B1 /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21200ED4256EBC8C00EE43B1 /* AboutCell.swift */; };
+		21200ED8256EBCE100EE43B1 /* InfoCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21200ED7256EBCE100EE43B1 /* InfoCellData.swift */; };
+		21200EDC256EBD7600EE43B1 /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21200EDB256EBD7600EE43B1 /* InfoModel.swift */; };
 		21465E6E253721D100910C86 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21465E6D253721D100910C86 /* InfoViewController.swift */; };
+		21AD31D1256C588000A3B77E /* MainTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AD31D0256C588000A3B77E /* MainTableCell.swift */; };
 		21F48CF6250040D2005E2646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F48CF5250040D2005E2646 /* AppDelegate.swift */; };
 		21F48CF8250040D2005E2646 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F48CF7250040D2005E2646 /* SceneDelegate.swift */; };
 		21F48CFA250040D2005E2646 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F48CF9250040D2005E2646 /* MainViewController.swift */; };
 		21F48CFD250040D2005E2646 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21F48CFB250040D2005E2646 /* Main.storyboard */; };
 		21F48CFF250040D4005E2646 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21F48CFE250040D4005E2646 /* Assets.xcassets */; };
 		21F48D02250040D4005E2646 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21F48D00250040D4005E2646 /* LaunchScreen.storyboard */; };
-		21F48D0E2500465F005E2646 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F48D0D2500465F005E2646 /* TableCell.swift */; };
 		21FA9766251173DD001927E1 /* BridgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA9765251173DD001927E1 /* BridgeViewController.swift */; };
 		21FA976A251BD0D2001927E1 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA9769251BD0D2001927E1 /* Bridge.swift */; };
 		21FA976E251C04EE001927E1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA976D251C04EE001927E1 /* Extensions.swift */; };
@@ -28,7 +32,12 @@
 /* Begin PBXFileReference section */
 		1F3071023D0D70CBCE2336AA /* Pods-LenOblBridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LenOblBridge.release.xcconfig"; path = "Target Support Files/Pods-LenOblBridge/Pods-LenOblBridge.release.xcconfig"; sourceTree = "<group>"; };
 		2104E235252745E6003B80B5 /* BridgesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgesModel.swift; sourceTree = "<group>"; };
+		21200ED1256EBC6F00EE43B1 /* HeaderAboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAboutCell.swift; sourceTree = "<group>"; };
+		21200ED4256EBC8C00EE43B1 /* AboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
+		21200ED7256EBCE100EE43B1 /* InfoCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellData.swift; sourceTree = "<group>"; };
+		21200EDB256EBD7600EE43B1 /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
 		21465E6D253721D100910C86 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		21AD31D0256C588000A3B77E /* MainTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCell.swift; sourceTree = "<group>"; };
 		21F48CF2250040D2005E2646 /* Мосты Ленобласти.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Мосты Ленобласти.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21F48CF5250040D2005E2646 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21F48CF7250040D2005E2646 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +46,6 @@
 		21F48CFE250040D4005E2646 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21F48D01250040D4005E2646 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21F48D03250040D4005E2646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		21F48D0D2500465F005E2646 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		21FA9765251173DD001927E1 /* BridgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeViewController.swift; sourceTree = "<group>"; };
 		21FA9769251BD0D2001927E1 /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
 		21FA976D251C04EE001927E1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -60,6 +68,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21200ECF256EBB9A00EE43B1 /* info */ = {
+			isa = PBXGroup;
+			children = (
+				21200ED1256EBC6F00EE43B1 /* HeaderAboutCell.swift */,
+				21200ED4256EBC8C00EE43B1 /* AboutCell.swift */,
+				21200ED7256EBCE100EE43B1 /* InfoCellData.swift */,
+				21200EDB256EBD7600EE43B1 /* InfoModel.swift */,
+			);
+			path = info;
+			sourceTree = "<group>";
+		};
 		21F48CE9250040D2005E2646 = {
 			isa = PBXGroup;
 			children = (
@@ -106,8 +125,9 @@
 		21F48D0C2500460E005E2646 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				21F48D0D2500465F005E2646 /* TableCell.swift */,
 				2104E235252745E6003B80B5 /* BridgesModel.swift */,
+				21200ECF256EBB9A00EE43B1 /* info */,
+				21AD31D0256C588000A3B77E /* MainTableCell.swift */,
 				21FA9769251BD0D2001927E1 /* Bridge.swift */,
 			);
 			path = models;
@@ -271,11 +291,15 @@
 				21FA9766251173DD001927E1 /* BridgeViewController.swift in Sources */,
 				21F48CF6250040D2005E2646 /* AppDelegate.swift in Sources */,
 				21FA9771251CEC4C001927E1 /* FullScreenImageViewController.swift in Sources */,
-				21F48D0E2500465F005E2646 /* TableCell.swift in Sources */,
+				21200EDC256EBD7600EE43B1 /* InfoModel.swift in Sources */,
 				21FA976E251C04EE001927E1 /* Extensions.swift in Sources */,
 				2104E236252745E6003B80B5 /* BridgesModel.swift in Sources */,
 				21FA976A251BD0D2001927E1 /* Bridge.swift in Sources */,
+				21200ED2256EBC6F00EE43B1 /* HeaderAboutCell.swift in Sources */,
+				21200ED5256EBC8C00EE43B1 /* AboutCell.swift in Sources */,
 				21FA977F252610F8001927E1 /* NavigationViewController.swift in Sources */,
+				21200ED8256EBCE100EE43B1 /* InfoCellData.swift in Sources */,
+				21AD31D1256C588000A3B77E /* MainTableCell.swift in Sources */,
 				21F48CF8250040D2005E2646 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,7 +377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -408,7 +432,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
