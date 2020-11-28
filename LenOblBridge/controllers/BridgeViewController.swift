@@ -1,10 +1,13 @@
 import UIKit
+import MapKit
 
 class BridgeViewController: UIViewController {
 
     @IBOutlet weak var tripLabel: UILabel!
     @IBOutlet weak var aboutLabel: UILabel!
     @IBOutlet weak var characterStackView: UIStackView!
+    
+    @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var titleSubview: UIView!
     @IBOutlet weak var aboutSubview: UIView!
@@ -36,14 +39,24 @@ class BridgeViewController: UIViewController {
     }
     
     var currentBridge: Bridge!
+    var bridgeAnnotation: BridgeAnnotation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // настройка контроллера и карты
         navigationController?.navigationBar.topItem?.backButtonTitle = "Назад"
-        
         setupLabels()
+        setupMap()
         
+        // ставим метку на карте
+        if let currentBridge = currentBridge {
+            bridgeAnnotation = BridgeAnnotation(title: currentBridge.title, river: currentBridge.river, coordinate: CLLocationCoordinate2D(latitude: currentBridge.latitude!, longitude: currentBridge.longtitude!))
+            mapView.addAnnotation(bridgeAnnotation)
+        }
+        // делегат для использования annotationView
+        mapView.delegate = self
+
+        // обработчик тапа по картинке с мостом
         photoImageView.isUserInteractionEnabled = true
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
         photoImageView.addGestureRecognizer(tapGestureRecognizer)
@@ -81,15 +94,45 @@ class BridgeViewController: UIViewController {
         engineerValueLabel.text = currentBridge.engineer
     }
     
-    func setupGradients() {
-        if let gradientColor = CAGradientLayer.primaryGradient(on: charactersSubview) {
-            charactersSubview.backgroundColor = UIColor(patternImage: gradientColor)
-            aboutSubview.backgroundColor = UIColor(patternImage: gradientColor)
-            photoSubview.backgroundColor = UIColor(patternImage: gradientColor)
-            view.backgroundColor = titleSubview.backgroundColor
+    func setupMap() {
+        if let latitude = currentBridge.latitude, let longtitude = currentBridge.longtitude {
+            let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longtitude)
+            let coordinateRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+            mapView.setRegion(coordinateRegion, animated: true)
         }
     }
 
 
+}
 
+extension BridgeViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard let annotation = annotation as? BridgeAnnotation else { return nil}
+        let identifier = "bridge"
+        var view: MKMarkerAnnotationView
+        
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView {
+            dequeuedView.annotation = annotation
+            view = dequeuedView
+        } else {
+            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view.canShowCallout = true
+            view.calloutOffset = CGPoint(x: -5, y: -5)
+            let button = UIButton(type: .detailDisclosure)
+            button.setImage(UIImage(named: "walkingMan"), for: .normal)
+            button.tintColor = .black
+            view.rightCalloutAccessoryView = button
+        }
+        
+        return view
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        guard let bridge = view.annotation as? BridgeAnnotation else {return}
+        
+        let launchOptions = [ MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving ]
+        bridge.mapItem?.openInMaps(launchOptions: launchOptions)
+    }
+    
 }
