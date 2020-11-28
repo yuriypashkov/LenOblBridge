@@ -171,7 +171,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WVN-Zo-r95" userLabel="MainSubview">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="734"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1050"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Fb-UH-ZKX" userLabel="TitleSubview">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
@@ -413,7 +413,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqI-Uf-Rgn" userLabel="AboutSubview">
-                                                <rect key="frame" x="0.0" y="600" width="414" height="134"/>
+                                                <rect key="frame" x="0.0" y="600" width="414" height="450"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iDP-yJ-9bi">
                                                         <rect key="frame" x="15" y="10" width="384" height="114"/>
@@ -444,13 +444,22 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
+                                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="h9j-Za-aBS">
+                                                        <rect key="frame" x="16" y="134" width="382" height="300"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="300" id="C4n-Oj-Sxm"/>
+                                                        </constraints>
+                                                    </mapView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="iDP-yJ-9bi" secondAttribute="trailing" constant="15" id="5dA-y4-fEy"/>
                                                     <constraint firstItem="iDP-yJ-9bi" firstAttribute="top" secondItem="bqI-Uf-Rgn" secondAttribute="top" constant="10" id="GX9-ST-qVM"/>
                                                     <constraint firstItem="iDP-yJ-9bi" firstAttribute="leading" secondItem="bqI-Uf-Rgn" secondAttribute="leading" constant="15" id="Qn9-A7-AuH"/>
-                                                    <constraint firstAttribute="bottom" secondItem="iDP-yJ-9bi" secondAttribute="bottom" constant="10" id="fxx-Xx-ekR"/>
+                                                    <constraint firstAttribute="trailing" secondItem="h9j-Za-aBS" secondAttribute="trailing" constant="16" id="VPx-ei-hZg"/>
+                                                    <constraint firstAttribute="bottom" secondItem="h9j-Za-aBS" secondAttribute="bottom" constant="16" id="WLJ-nr-ukC"/>
+                                                    <constraint firstItem="h9j-Za-aBS" firstAttribute="leading" secondItem="bqI-Uf-Rgn" secondAttribute="leading" constant="16" id="jr4-52-9da"/>
+                                                    <constraint firstItem="h9j-Za-aBS" firstAttribute="top" secondItem="iDP-yJ-9bi" secondAttribute="bottom" constant="10" id="tTG-Hx-NdL"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -502,6 +511,7 @@
                         <outlet property="engineerValueLabel" destination="Iou-YO-CB5" id="YNK-e2-tmk"/>
                         <outlet property="foundationValueLabel" destination="5D2-wf-hoH" id="pay-rl-RP5"/>
                         <outlet property="lengthValueLabel" destination="ejM-fx-IC1" id="l6k-hb-vPV"/>
+                        <outlet property="mapView" destination="h9j-Za-aBS" id="RGj-7B-yCQ"/>
                         <outlet property="photoImageView" destination="RdU-dv-R8O" id="TQV-4V-IQS"/>
                         <outlet property="photoSubview" destination="n4I-ef-lFx" id="o3N-6Z-Ind"/>
                         <outlet property="shareButton" destination="tRn-Fn-djR" id="grH-Dd-muX"/>
