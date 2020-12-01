@@ -14,6 +14,10 @@ class FullScreenImageViewController: UIViewController {
         if let image = imageToShow { imageView.image = image }
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "Назад", style: .plain, target: nil, action: nil)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
+    }
 
 }
 

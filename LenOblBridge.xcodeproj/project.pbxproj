@@ -13,6 +13,9 @@
 		21200ED8256EBCE100EE43B1 /* InfoCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21200ED7256EBCE100EE43B1 /* InfoCellData.swift */; };
 		21200EDC256EBD7600EE43B1 /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21200EDB256EBD7600EE43B1 /* InfoModel.swift */; };
 		21465E6E253721D100910C86 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21465E6D253721D100910C86 /* InfoViewController.swift */; };
+		21AC9E642572E42300F4ABDF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC9E632572E42300F4ABDF /* MapViewController.swift */; };
+		21AC9E682572EA4A00F4ABDF /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC9E672572EA4A00F4ABDF /* NetworkModel.swift */; };
+		21AC9E6E2575AD3800F4ABDF /* SelectableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC9E6D2575AD3800F4ABDF /* SelectableLabel.swift */; };
 		21AD31D1256C588000A3B77E /* MainTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AD31D0256C588000A3B77E /* MainTableCell.swift */; };
 		21F48CF6250040D2005E2646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F48CF5250040D2005E2646 /* AppDelegate.swift */; };
 		21F48CF8250040D2005E2646 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F48CF7250040D2005E2646 /* SceneDelegate.swift */; };
@@ -37,6 +40,9 @@
 		21200ED7256EBCE100EE43B1 /* InfoCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellData.swift; sourceTree = "<group>"; };
 		21200EDB256EBD7600EE43B1 /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
 		21465E6D253721D100910C86 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		21AC9E632572E42300F4ABDF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		21AC9E672572EA4A00F4ABDF /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
+		21AC9E6D2575AD3800F4ABDF /* SelectableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableLabel.swift; sourceTree = "<group>"; };
 		21AD31D0256C588000A3B77E /* MainTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCell.swift; sourceTree = "<group>"; };
 		21F48CF2250040D2005E2646 /* Мосты Ленобласти.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Мосты Ленобласти.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21F48CF5250040D2005E2646 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +85,14 @@
 			path = info;
 			sourceTree = "<group>";
 		};
+		21AC9E662572EA3200F4ABDF /* network */ = {
+			isa = PBXGroup;
+			children = (
+				21AC9E672572EA4A00F4ABDF /* NetworkModel.swift */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
 		21F48CE9250040D2005E2646 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +120,7 @@
 				21F48D0C2500460E005E2646 /* models */,
 				21F48CFE250040D4005E2646 /* Assets.xcassets */,
 				21F48D03250040D4005E2646 /* Info.plist */,
+				21AC9E662572EA3200F4ABDF /* network */,
 				21FA977B2524A566001927E1 /* xib */,
 			);
 			path = LenOblBridge;
@@ -118,6 +133,7 @@
 				21F48CF7250040D2005E2646 /* SceneDelegate.swift */,
 				21F48D00250040D4005E2646 /* LaunchScreen.storyboard */,
 				21FA976D251C04EE001927E1 /* Extensions.swift */,
+				21AC9E6D2575AD3800F4ABDF /* SelectableLabel.swift */,
 			);
 			path = supportFiles;
 			sourceTree = "<group>";
@@ -138,6 +154,7 @@
 			children = (
 				21F48CF9250040D2005E2646 /* MainViewController.swift */,
 				21FA977E252610F8001927E1 /* NavigationViewController.swift */,
+				21AC9E632572E42300F4ABDF /* MapViewController.swift */,
 				21FA9765251173DD001927E1 /* BridgeViewController.swift */,
 				21FA976F251CEC4C001927E1 /* FullScreenImageViewController.swift */,
 				21465E6D253721D100910C86 /* InfoViewController.swift */,
@@ -294,13 +311,16 @@
 				21200EDC256EBD7600EE43B1 /* InfoModel.swift in Sources */,
 				21FA976E251C04EE001927E1 /* Extensions.swift in Sources */,
 				2104E236252745E6003B80B5 /* BridgesModel.swift in Sources */,
+				21AC9E682572EA4A00F4ABDF /* NetworkModel.swift in Sources */,
 				21FA976A251BD0D2001927E1 /* Bridge.swift in Sources */,
+				21AC9E6E2575AD3800F4ABDF /* SelectableLabel.swift in Sources */,
 				21200ED2256EBC6F00EE43B1 /* HeaderAboutCell.swift in Sources */,
 				21200ED5256EBC8C00EE43B1 /* AboutCell.swift in Sources */,
 				21FA977F252610F8001927E1 /* NavigationViewController.swift in Sources */,
 				21200ED8256EBCE100EE43B1 /* InfoCellData.swift in Sources */,
 				21AD31D1256C588000A3B77E /* MainTableCell.swift in Sources */,
 				21F48CF8250040D2005E2646 /* SceneDelegate.swift in Sources */,
+				21AC9E642572E42300F4ABDF /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

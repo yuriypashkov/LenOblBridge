@@ -61,16 +61,15 @@ extension MainViewController: UISearchControllerDelegate, UISearchBarDelegate, U
     }
     
     func filterContentForSearchText(_ searchText: String) {
-        if let parsedBridges = bridgesModel.parsedBridges {
-            filteredBridges = parsedBridges.filter({ (bridge: Bridge) -> Bool in
+        filteredBridges = bridges.filter({ (bridge: Bridge) -> Bool in
                 return (bridge.about?.lowercased().contains(searchText.lowercased()))!
             })
-        }
-        tableViewReload()
+        
+        tableView.reloadData()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        tableViewReload()
+        tableView.reloadData()
     }
     
     func willDismissSearchController(_ searchController: UISearchController) {
