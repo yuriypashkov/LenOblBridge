@@ -20,7 +20,9 @@ class BridgeViewController: UIViewController {
     @IBOutlet weak var lengthValueLabel: UILabel!
     @IBOutlet weak var widthValueLabel: UILabel!
     @IBOutlet weak var architectValueLabel: UILabel!
-    @IBOutlet weak var engineerValueLabel: UILabel!
+    //@IBOutlet weak var engineerValueLabel: UILabel!
+    @IBOutlet weak var engineerValueLabel: SelectableLabel!
+    
     
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var photoImageView: UIImageView!
@@ -50,7 +52,7 @@ class BridgeViewController: UIViewController {
         
         // ставим метку на карте
         if let currentBridge = currentBridge {
-            bridgeAnnotation = BridgeAnnotation(title: currentBridge.title, river: currentBridge.river, coordinate: CLLocationCoordinate2D(latitude: currentBridge.latitude!, longitude: currentBridge.longtitude!))
+            bridgeAnnotation = BridgeAnnotation(title: currentBridge.title, river: currentBridge.river, coordinate: CLLocationCoordinate2D(latitude: currentBridge.latitude!, longitude: currentBridge.longtitude!), bridgeObject: currentBridge)
             mapView.addAnnotation(bridgeAnnotation)
         }
         // делегат для использования annotationView
@@ -60,16 +62,30 @@ class BridgeViewController: UIViewController {
         photoImageView.isUserInteractionEnabled = true
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
         photoImageView.addGestureRecognizer(tapGestureRecognizer)
+        
+        let labelColorGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        labelColorGestureRecognizer.cancelsTouchesInView = false
+        view.addGestureRecognizer(labelColorGestureRecognizer)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
         navigationController?.hidesBarsOnTap = false
+        tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
     }
     
     @objc func imageTapped(_ sender: UITapGestureRecognizer) {
         let fullSizeVC = FullScreenImageViewController()
         fullSizeVC.imageToShow = photoImageView.image
         self.navigationController?.pushViewController(fullSizeVC, animated: true)
+    }
+    
+    @objc func dismissKeyboard() {
+        engineerValueLabel.backgroundColor = .clear
     }
 
     
@@ -91,7 +107,9 @@ class BridgeViewController: UIViewController {
         waterValueLabel.text = currentBridge.river
         lengthValueLabel.text = currentBridge.length
         widthValueLabel.text = currentBridge.width
-        engineerValueLabel.text = currentBridge.engineer
+        if let latitude = currentBridge.latitude, let longtitude = currentBridge.longtitude {
+            engineerValueLabel.text = "\(latitude), \(longtitude)"
+        }
     }
     
     func setupMap() {
@@ -101,7 +119,6 @@ class BridgeViewController: UIViewController {
             mapView.setRegion(coordinateRegion, animated: true)
         }
     }
-
 
 }
 

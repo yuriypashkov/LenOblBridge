@@ -1,22 +1,23 @@
 
 import UIKit
 
-protocol MainDelegate: class {
-    func tableViewReload()
-    func updateInternetErrorLabel(showError: Bool, isSomeContent: Bool, textError: String)
-    var activityIndicator: UIActivityIndicatorView {get}
-}
+//protocol MainDelegate: class {
+//    func tableViewReload()
+//    func updateInternetErrorLabel(showError: Bool, isSomeContent: Bool, textError: String)
+//    var activityIndicator: UIActivityIndicatorView {get}
+//}
 
-class MainViewController: UIViewController, MainDelegate {
+class MainViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var internetErrorLabel: UILabel!
     @IBOutlet weak var errorView: UIView!
     @IBOutlet weak var errorViewLabel: UILabel!
     
     let searchController = UISearchController(searchResultsController: nil)
-    let bridgesModel = BridgesModel()
-    var filteredBridges = [Bridge]()
+    
+    var bridges: [Bridge] = []
+    var filteredBridges: [Bridge] = []
+    var networkModel = NetworkModel()
     
     var searchBarIsEmpty: Bool {
         guard let text = searchController.searchBar.text else { return false }
@@ -29,27 +30,14 @@ class MainViewController: UIViewController, MainDelegate {
     let activityIndicator = UIActivityIndicatorView()
     var mainRefreshControl = UIRefreshControl()
     
-    func tableViewReload() {
-        tableView.reloadData()
-    }
-    
-    func updateInternetErrorLabel(showError: Bool, isSomeContent: Bool, textError: String) {
-        internetErrorLabel.text = textError
-        internetErrorLabel.alpha = (showError && !isSomeContent) ? 1 : 0
-        errorViewLabel.text = textError
-        errorView.alpha = (showError && isSomeContent) ? 1 : 0
-    }
-    
     @objc func refresh(sender: UIRefreshControl) {
-        bridgesModel.loadData()
+        reloadData()
         sender.endRefreshing()
     }
     
     // must strong IBOutlet иначе значение не возвращается после отмены поиска
     @IBOutlet var searchButton: UIBarButtonItem!
     @IBOutlet var infoButton: UIBarButtonItem!
-    
-    
     
     @IBAction func searchButtonTap(_ sender: UIBarButtonItem) {
         self.navigationItem.titleView = searchController.searchBar
@@ -62,21 +50,20 @@ class MainViewController: UIViewController, MainDelegate {
     @IBAction func infoButtonTap(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let infoViewController = storyboard.instantiateViewController(withIdentifier: "InfoViewController")
-        //present(infoViewController, animated: true, completion: nil)
         navigationController?.pushViewController(infoViewController, animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // иконки для iOS < 13
         if #available(iOS 13.0, *) {} else {
             navigationItem.leftBarButtonItem?.image = UIImage(named: "search35px")
             navigationItem.rightBarButtonItem?.image = UIImage(named: "info35px")
         }
         
-        navigationController?.navigationBar.tintColor = UIColor(red: 0.19, green: 0.18, blue: 0.20, alpha: 1.00)
-        
-        bridgesModel.delegate = self
-        
+        // загружаем данные
+        reloadData()
+
         // searchcontroller настройки
         searchController.searchResultsUpdater = self
         searchController.delegate = self
@@ -88,14 +75,41 @@ class MainViewController: UIViewController, MainDelegate {
         
         // индикатор загрузки контента
         activityIndicator.center = view.center
-        //activityIndicator.backgroundColor = .white
+        activityIndicator.hidesWhenStopped = true
+        
         activityIndicator.startAnimating()
         view.addSubview(activityIndicator)
         
         // подключаем pull refresh
         mainRefreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
-        //mainRefreshControl.tintColor = .white
         tableView.refreshControl = mainRefreshControl
+    }
+    
+    func reloadData() {
+        networkModel.getBridges { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let tempBridges):
+                    self.bridges = tempBridges
+                    self.tableView.reloadData()
+                    self.showData()
+                case .failure:
+                    self.bridges = []
+                    self.tableView.reloadData()
+                    self.showError()
+                }
+            }
+        }
+    }
+    
+    func showData() {
+        activityIndicator.stopAnimating()
+        errorView.alpha = 0
+    }
+    
+    func showError() {
+        activityIndicator.stopAnimating()
+        errorView.alpha = 1
     }
 
 }
@@ -107,18 +121,15 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         if isFiltering {
             return filteredBridges.count
         }
-        
-        guard let count = bridgesModel.parsedBridges else { return 0 }
-        return count.count
+        return bridges.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell") as! TableCell
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableCell") as! MainTableCell
         
         if !isFiltering {
-            cell.setData(imageName: bridgesModel.parsedBridges?[indexPath.row].previewImageURL ?? "None",
-                                     title: bridgesModel.parsedBridges?[indexPath.row].title ?? "None")}
+            cell.setData(imageName: bridges[indexPath.row].previewImageURL ?? "None", title: bridges[indexPath.row].title ?? "None")
+        }
         else {
             cell.setData(imageName: filteredBridges[indexPath.row].previewImageURL ?? "None",
                                     title: filteredBridges[indexPath.row].title ?? "None")
@@ -132,7 +143,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         guard let bridgeViewController = storyboard.instantiateViewController(withIdentifier: "TestViewController") as? BridgeViewController else { return }
         
         if !isFiltering {
-            bridgeViewController.currentBridge = bridgesModel.parsedBridges?[indexPath.row]
+            bridgeViewController.currentBridge = bridges[indexPath.row]
         }
         else {
             bridgeViewController.currentBridge = filteredBridges[indexPath.row]

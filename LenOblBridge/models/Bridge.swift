@@ -13,19 +13,21 @@ struct Bridge: Decodable {
     var length: String?
     var width: String?
     var architect: String?
-    var engineer: String?
+//    var engineer: String?
     var about: String?
     var road: String?
     var mainImageURL: String?
     var previewImageURL: String?
     var latitude: Double?
     var longtitude: Double?
+    
 }
 
 class BridgeAnnotation: NSObject, MKAnnotation {
     let title: String?
     let river: String?
     let coordinate: CLLocationCoordinate2D
+    let bridgeObject: Bridge? // странное свойство для вызова нового VC по тапу на вьюаннотейшн из MapViewController
     
     var mapItem: MKMapItem? {
         
@@ -42,9 +44,10 @@ class BridgeAnnotation: NSObject, MKAnnotation {
         return river
     }
     
-    init(title: String?, river: String?, coordinate: CLLocationCoordinate2D) {
+    init(title: String?, river: String?, coordinate: CLLocationCoordinate2D, bridgeObject: Bridge) {
         self.title = title
         self.river = river
         self.coordinate = coordinate
+        self.bridgeObject = bridgeObject
     }
 }
