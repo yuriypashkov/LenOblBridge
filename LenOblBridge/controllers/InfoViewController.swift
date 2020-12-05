@@ -10,6 +10,8 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
         return infoModel.data.count
     }
     
+    
+    
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
     }
@@ -54,7 +56,6 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.topItem?.backButtonTitle = "Назад"
-
     }
     
     func sendEmail() {

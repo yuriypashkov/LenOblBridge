@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2104E236252745E6003B80B5 /* BridgesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2104E235252745E6003B80B5 /* BridgesModel.swift */; };
 		21200ED2256EBC6F00EE43B1 /* HeaderAboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21200ED1256EBC6F00EE43B1 /* HeaderAboutCell.swift */; };
 		21200ED5256EBC8C00EE43B1 /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21200ED4256EBC8C00EE43B1 /* AboutCell.swift */; };
 		21200ED8256EBCE100EE43B1 /* InfoCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21200ED7256EBCE100EE43B1 /* InfoCellData.swift */; };
@@ -34,7 +33,6 @@
 
 /* Begin PBXFileReference section */
 		1F3071023D0D70CBCE2336AA /* Pods-LenOblBridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LenOblBridge.release.xcconfig"; path = "Target Support Files/Pods-LenOblBridge/Pods-LenOblBridge.release.xcconfig"; sourceTree = "<group>"; };
-		2104E235252745E6003B80B5 /* BridgesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgesModel.swift; sourceTree = "<group>"; };
 		21200ED1256EBC6F00EE43B1 /* HeaderAboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAboutCell.swift; sourceTree = "<group>"; };
 		21200ED4256EBC8C00EE43B1 /* AboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
 		21200ED7256EBCE100EE43B1 /* InfoCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellData.swift; sourceTree = "<group>"; };
@@ -77,8 +75,6 @@
 		21200ECF256EBB9A00EE43B1 /* info */ = {
 			isa = PBXGroup;
 			children = (
-				21200ED1256EBC6F00EE43B1 /* HeaderAboutCell.swift */,
-				21200ED4256EBC8C00EE43B1 /* AboutCell.swift */,
 				21200ED7256EBCE100EE43B1 /* InfoCellData.swift */,
 				21200EDB256EBD7600EE43B1 /* InfoModel.swift */,
 			);
@@ -91,6 +87,16 @@
 				21AC9E672572EA4A00F4ABDF /* NetworkModel.swift */,
 			);
 			path = network;
+			sourceTree = "<group>";
+		};
+		21AC9E702576E6ED00F4ABDF /* view */ = {
+			isa = PBXGroup;
+			children = (
+				21AD31D0256C588000A3B77E /* MainTableCell.swift */,
+				21200ED4256EBC8C00EE43B1 /* AboutCell.swift */,
+				21200ED1256EBC6F00EE43B1 /* HeaderAboutCell.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		21F48CE9250040D2005E2646 = {
@@ -114,6 +120,7 @@
 		21F48CF4250040D2005E2646 /* LenOblBridge */ = {
 			isa = PBXGroup;
 			children = (
+				21AC9E702576E6ED00F4ABDF /* view */,
 				21F48D09250040E2005E2646 /* supportFiles */,
 				21F48D11250046BB005E2646 /* controllers */,
 				21F48CFB250040D2005E2646 /* Main.storyboard */,
@@ -141,9 +148,7 @@
 		21F48D0C2500460E005E2646 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				2104E235252745E6003B80B5 /* BridgesModel.swift */,
 				21200ECF256EBB9A00EE43B1 /* info */,
-				21AD31D0256C588000A3B77E /* MainTableCell.swift */,
 				21FA9769251BD0D2001927E1 /* Bridge.swift */,
 			);
 			path = models;
@@ -310,7 +315,6 @@
 				21FA9771251CEC4C001927E1 /* FullScreenImageViewController.swift in Sources */,
 				21200EDC256EBD7600EE43B1 /* InfoModel.swift in Sources */,
 				21FA976E251C04EE001927E1 /* Extensions.swift in Sources */,
-				2104E236252745E6003B80B5 /* BridgesModel.swift in Sources */,
 				21AC9E682572EA4A00F4ABDF /* NetworkModel.swift in Sources */,
 				21FA976A251BD0D2001927E1 /* Bridge.swift in Sources */,
 				21AC9E6E2575AD3800F4ABDF /* SelectableLabel.swift in Sources */,

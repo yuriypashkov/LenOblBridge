@@ -56,8 +56,8 @@
                                                     <color key="textColor" red="0.083792098450000005" green="0.022556000810000001" blue="0.046790005340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Гордый красавец над гордым ручьем" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gik-Cf-wCO">
-                                                    <rect key="frame" x="122" y="45.5" width="260" height="38.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shortText" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gik-Cf-wCO">
+                                                    <rect key="frame" x="122" y="45.5" width="260" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -84,6 +84,7 @@
                                         <connections>
                                             <outlet property="coverView" destination="ED3-UR-Wsw" id="ycH-cU-17w"/>
                                             <outlet property="mainImage" destination="Dba-UL-2WW" id="XXB-ss-DUA"/>
+                                            <outlet property="shortTextLabel" destination="gik-Cf-wCO" id="t4D-lg-cjw"/>
                                             <outlet property="titleLabel" destination="NtM-Er-ubf" id="Iu9-5b-EBN"/>
                                         </connections>
                                     </tableViewCell>
@@ -133,16 +134,10 @@
                                 <action selector="searchButtonTap:" destination="BYZ-38-t0r" id="x24-2g-ynD"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="hE7-Ek-eCs">
-                            <connections>
-                                <action selector="infoButtonTap:" destination="BYZ-38-t0r" id="RE5-Hy-i1d"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="errorView" destination="vJp-7B-oih" id="KrT-Mh-kxc"/>
                         <outlet property="errorViewLabel" destination="1XA-uB-4on" id="VJX-vC-Dsp"/>
-                        <outlet property="infoButton" destination="hE7-Ek-eCs" id="qTn-jd-4Ww"/>
                         <outlet property="searchButton" destination="bXj-DT-zg3" id="6KL-RJ-O2j"/>
                         <outlet property="tableView" destination="GMo-nB-bS1" id="1Th-8u-Pwa"/>
                     </connections>
@@ -155,7 +150,7 @@
         <scene sceneID="tW3-MF-fPp">
             <objects>
                 <navigationController id="etw-AI-anb" customClass="NavigationViewController" customModule="Мосты_Ленобласти" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="map" catalog="system" id="Wlj-0v-DZk">
+                    <tabBarItem key="tabBarItem" title="" image="2-1" selectedImage="2-2" id="Wlj-0v-DZk">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PPx-Ad-DWB">
@@ -168,7 +163,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gyZ-xk-lai" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="895"/>
+            <point key="canvasLocation" x="138" y="840"/>
         </scene>
         <!--На карте-->
         <scene sceneID="ghJ-gP-q2E">
@@ -227,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eV2-A2-aa1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1075" y="895"/>
+            <point key="canvasLocation" x="1048" y="840"/>
         </scene>
         <!--Bridge View Controller-->
         <scene sceneID="kpk-sn-BzV">
@@ -604,7 +599,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Ft-Cm-XQJ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <color key="separatorColor" systemColor="systemGray5Color"/>
                                 <prototypes>
@@ -616,9 +611,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cAX-vU-qJS">
-                                                    <rect key="frame" x="16" y="16" width="382" height="128"/>
+                                                    <rect key="frame" x="143" y="16" width="128" height="128"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="128" id="DmL-Nu-eHd"/>
+                                                        <constraint firstAttribute="width" secondItem="cAX-vU-qJS" secondAttribute="height" multiplier="1:1" id="L4V-Vr-P9l"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sAe-OH-Xkx" userLabel="LabelStackView">
@@ -653,10 +649,9 @@
                                                 <constraint firstItem="sAe-OH-Xkx" firstAttribute="top" secondItem="cAX-vU-qJS" secondAttribute="bottom" constant="8" id="DoC-T8-gf5"/>
                                                 <constraint firstItem="sAe-OH-Xkx" firstAttribute="leading" secondItem="hPs-bS-k4A" secondAttribute="leading" constant="16" id="OKe-fK-gli"/>
                                                 <constraint firstItem="IhR-ha-mpK" firstAttribute="leading" secondItem="hPs-bS-k4A" secondAttribute="leading" id="Oo7-am-nYt"/>
+                                                <constraint firstItem="cAX-vU-qJS" firstAttribute="centerX" secondItem="hPs-bS-k4A" secondAttribute="centerX" id="QbN-ya-rVX"/>
                                                 <constraint firstItem="cAX-vU-qJS" firstAttribute="top" secondItem="hPs-bS-k4A" secondAttribute="top" constant="16" id="Vea-Mr-49Z"/>
-                                                <constraint firstItem="cAX-vU-qJS" firstAttribute="leading" secondItem="hPs-bS-k4A" secondAttribute="leading" constant="16" id="d35-cX-eM2"/>
                                                 <constraint firstAttribute="bottom" secondItem="IhR-ha-mpK" secondAttribute="bottom" id="uPI-Da-9dM"/>
-                                                <constraint firstAttribute="trailing" secondItem="cAX-vU-qJS" secondAttribute="trailing" constant="16" id="yel-zU-X9f"/>
                                                 <constraint firstAttribute="bottom" secondItem="sAe-OH-Xkx" secondAttribute="bottom" constant="16" id="zEY-Mh-8eK"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -739,19 +734,20 @@
                             <constraint firstItem="0Ft-Cm-XQJ" firstAttribute="leading" secondItem="Gdr-uH-3yI" secondAttribute="leading" id="gfI-a2-BdA"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="3-1" id="5q6-YU-Hx3"/>
                     <connections>
                         <outlet property="tableView" destination="0Ft-Cm-XQJ" id="ocA-PX-xJh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vyG-Dm-E4G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3131.884057971015" y="126.5625"/>
+            <point key="canvasLocation" x="-1113" y="1323"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="rBd-mM-hUU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="vc6-CJ-APt" customClass="NavigationViewController" customModule="Мосты_Ленобласти" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="folder" catalog="system" id="x6a-wP-zRO"/>
+                    <tabBarItem key="tabBarItem" title="" image="1-1" selectedImage="1-2" id="x6a-wP-zRO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2xf-sU-Wpx">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -788,6 +784,7 @@
                     <connections>
                         <segue destination="vc6-CJ-APt" kind="relationship" relationship="viewControllers" id="hXz-Dy-Abg"/>
                         <segue destination="etw-AI-anb" kind="relationship" relationship="viewControllers" id="sv8-GJ-pw6"/>
+                        <segue destination="x0F-mG-dwk" kind="relationship" relationship="viewControllers" id="aFc-xT-4mP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DHP-rR-2xT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -796,10 +793,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="folder" catalog="system" width="128" height="97"/>
-        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="1-1" width="25" height="25"/>
+        <image name="1-2" width="25" height="25"/>
+        <image name="2-1" width="25" height="25"/>
+        <image name="2-2" width="25" height="25"/>
+        <image name="3-1" width="25" height="25"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="map" catalog="system" width="128" height="110"/>
         <image name="shareFive" width="128" height="128"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
