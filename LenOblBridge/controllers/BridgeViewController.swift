@@ -34,7 +34,7 @@ class BridgeViewController: UIViewController {
         sender.layer.add(colorAnimation, forKey: "ColorPulse")
         sender.layer.cornerRadius = sender.frame.width / 2
         if let image = photoImageView.image, let bridgeName = currentBridge.title {
-            let message = "Потрясающий воображение \(bridgeName), находящийся в Ленинградской области. Узнать о нём, а также о множестве других интересных мостах Ленинградской области, можно, скачав приложение: <ссылка>"
+            let message = "Потрясающий воображение \(bridgeName), находящийся в Ленинградской области. Узнать о нём, а также о множестве других интересных мостах Ленинградской области, можно, скачав приложение: https://apps.apple.com/ru/app/id1543536938"
             let vc = UIActivityViewController(activityItems: [image, message], applicationActivities: [])
             present(vc, animated: true, completion: nil)
         }
