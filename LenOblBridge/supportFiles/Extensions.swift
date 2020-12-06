@@ -78,7 +78,7 @@ extension MainViewController: UISearchControllerDelegate, UISearchBarDelegate, U
     
     func didDismissSearchController(_ searchController: UISearchController) {
         self.navigationItem.leftBarButtonItem = self.searchButton
-        self.navigationItem.rightBarButtonItem = self.infoButton
+        //self.navigationItem.rightBarButtonItem = self.infoButton
     }
 }
 

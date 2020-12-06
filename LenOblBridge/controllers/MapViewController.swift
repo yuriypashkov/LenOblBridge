@@ -86,7 +86,7 @@ class MapViewController: UIViewController {
     
     func setupMap() {
         let coordinate = CLLocationCoordinate2D(latitude: 59.940329, longitude: 30.309455)
-        let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 100000, longitudinalMeters: 100000)
+        let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 130000, longitudinalMeters: 130000)
         mapView.setRegion(region, animated: true)
     }
 
@@ -107,6 +107,7 @@ extension MapViewController: MKMapViewDelegate {
             view.canShowCallout = true
             view.calloutOffset = CGPoint(x: -5, y: -5)
             let button = UIButton(type: .detailDisclosure)
+            //button.setImage(UIImage(named: "3-2"), for: .normal)
             button.tintColor = .black
             view.rightCalloutAccessoryView = button
         }

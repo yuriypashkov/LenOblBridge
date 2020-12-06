@@ -13,13 +13,13 @@ struct Bridge: Decodable {
     var length: String?
     var width: String?
     var architect: String?
-//    var engineer: String?
     var about: String?
     var road: String?
     var mainImageURL: String?
     var previewImageURL: String?
     var latitude: Double?
     var longtitude: Double?
+    var shortText: String?
     
 }
 

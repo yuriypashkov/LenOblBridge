@@ -37,28 +37,22 @@ class MainViewController: UIViewController {
     
     // must strong IBOutlet иначе значение не возвращается после отмены поиска
     @IBOutlet var searchButton: UIBarButtonItem!
-    @IBOutlet var infoButton: UIBarButtonItem!
+    //@IBOutlet var infoButton: UIBarButtonItem!
     
     @IBAction func searchButtonTap(_ sender: UIBarButtonItem) {
         self.navigationItem.titleView = searchController.searchBar
         self.navigationItem.leftBarButtonItem = nil
-        self.navigationItem.rightBarButtonItem = nil
+        //self.navigationItem.rightBarButtonItem = nil
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.becomeFirstResponder()
-    }
-    
-    @IBAction func infoButtonTap(_ sender: UIBarButtonItem) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let infoViewController = storyboard.instantiateViewController(withIdentifier: "InfoViewController")
-        navigationController?.pushViewController(infoViewController, animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // иконки для iOS < 13
         if #available(iOS 13.0, *) {} else {
-            navigationItem.leftBarButtonItem?.image = UIImage(named: "search35px")
-            navigationItem.rightBarButtonItem?.image = UIImage(named: "info35px")
+            navigationItem.leftBarButtonItem?.image = UIImage(named: "search25px")
+            //navigationItem.rightBarButtonItem?.image = UIImage(named: "info35px")
         }
         
         // загружаем данные
@@ -83,6 +77,9 @@ class MainViewController: UIViewController {
         // подключаем pull refresh
         mainRefreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
         tableView.refreshControl = mainRefreshControl
+        
+        //tabBarController?.tabBarItem.title = nil
+        //tabBarController?.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
     }
     
     func reloadData() {
@@ -91,6 +88,14 @@ class MainViewController: UIViewController {
                 switch result {
                 case .success(let tempBridges):
                     self.bridges = tempBridges
+                    
+                    // сортировка полученных данных по ID
+                    self.bridges.sort(by: { (bridgeOne, bridgeTwo) -> Bool in
+                        if let first = bridgeOne.id, let second = bridgeTwo.id {
+                            return first < second
+                        } else { return false}
+                    })
+                    
                     self.tableView.reloadData()
                     self.showData()
                 case .failure:
@@ -128,11 +133,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableCell") as! MainTableCell
         
         if !isFiltering {
-            cell.setData(imageName: bridges[indexPath.row].previewImageURL ?? "None", title: bridges[indexPath.row].title ?? "None")
+            cell.setData(imageName: bridges[indexPath.row].previewImageURL ?? "None", title: bridges[indexPath.row].title ?? "None", shortText: bridges[indexPath.row].shortText ?? "None")
         }
         else {
             cell.setData(imageName: filteredBridges[indexPath.row].previewImageURL ?? "None",
-                                    title: filteredBridges[indexPath.row].title ?? "None")
+                                    title: filteredBridges[indexPath.row].title ?? "None", shortText: filteredBridges[indexPath.row].shortText ?? "None")
         }
         
         return cell
