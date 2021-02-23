@@ -7,4 +7,5 @@ target 'LenOblBridge' do
 
   # Pods for LenOblBridge
 	pod 'Kingfisher', '~> 5.0'
+        pod 'Google-Mobile-Ads-SDK'
 end

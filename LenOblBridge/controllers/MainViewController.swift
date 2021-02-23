@@ -1,5 +1,6 @@
 
 import UIKit
+import GoogleMobileAds
 
 //protocol MainDelegate: class {
 //    func tableViewReload()
@@ -7,11 +8,15 @@ import UIKit
 //    var activityIndicator: UIActivityIndicatorView {get}
 //}
 
+// app uid: ca-app-pub-7211921803083081~5736218234
+// first banner uid: ca-app-pub-7211921803083081/6283013149
+
 class MainViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var errorView: UIView!
     @IBOutlet weak var errorViewLabel: UILabel!
+    @IBOutlet weak var adView: GADBannerView!
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -54,6 +59,10 @@ class MainViewController: UIViewController {
             navigationItem.leftBarButtonItem?.image = UIImage(named: "search25px")
             //navigationItem.rightBarButtonItem?.image = UIImage(named: "info35px")
         }
+        // ad banner
+        adView.rootViewController = self
+        adView.adUnitID = "ca-app-pub-7211921803083081/6283013149"
+        adView.load(GADRequest())
         
         // загружаем данные
         reloadData()
