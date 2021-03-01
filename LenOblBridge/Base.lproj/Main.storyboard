@@ -754,6 +754,62 @@
             </objects>
             <point key="canvasLocation" x="-1113.0434782608697" y="1322.5446428571429"/>
         </scene>
+        <!--Purchase View Controller-->
+        <scene sceneID="UlM-Ce-vxY">
+            <objects>
+                <viewController storyboardIdentifier="PurchaseViewController" id="lFO-Oj-xGB" customClass="PurchaseViewController" customModule="Мосты_Ленобласти" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fWe-ta-fIv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отменить рекламу" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2h-sn-wJO">
+                                <rect key="frame" x="16" y="60" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ll0-wE-ksv">
+                                <rect key="frame" x="32" y="145" width="350" height="40"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1oq-Iy-hKC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Купить"/>
+                                <connections>
+                                    <action selector="buyButtonTap:" destination="lFO-Oj-xGB" eventType="touchUpInside" id="vi2-Li-BEj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wId-b5-5mM">
+                                <rect key="frame" x="32" y="217" width="350" height="30"/>
+                                <state key="normal" title="Восстановить покупку"/>
+                                <connections>
+                                    <action selector="restoreButtonTap:" destination="lFO-Oj-xGB" eventType="touchUpInside" id="C3x-Is-Sus"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="V7H-nj-8H6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V7H-nj-8H6" firstAttribute="trailing" secondItem="Y2h-sn-wJO" secondAttribute="trailing" constant="16" id="2hu-aT-ctD"/>
+                            <constraint firstItem="Y2h-sn-wJO" firstAttribute="top" secondItem="V7H-nj-8H6" secondAttribute="top" constant="16" id="9mg-bC-B2F"/>
+                            <constraint firstItem="ll0-wE-ksv" firstAttribute="leading" secondItem="V7H-nj-8H6" secondAttribute="leading" constant="32" id="MAY-rE-c9t"/>
+                            <constraint firstItem="Y2h-sn-wJO" firstAttribute="leading" secondItem="V7H-nj-8H6" secondAttribute="leading" constant="16" id="Mrk-v5-a14"/>
+                            <constraint firstItem="ll0-wE-ksv" firstAttribute="top" secondItem="Y2h-sn-wJO" secondAttribute="bottom" constant="64" id="WCc-iy-HAy"/>
+                            <constraint firstItem="V7H-nj-8H6" firstAttribute="trailing" secondItem="ll0-wE-ksv" secondAttribute="trailing" constant="32" id="jgc-jh-fg7"/>
+                            <constraint firstItem="wId-b5-5mM" firstAttribute="leading" secondItem="V7H-nj-8H6" secondAttribute="leading" constant="32" id="k0G-NQ-aIq"/>
+                            <constraint firstItem="wId-b5-5mM" firstAttribute="top" secondItem="ll0-wE-ksv" secondAttribute="bottom" constant="32" id="kpT-So-gPT"/>
+                            <constraint firstItem="V7H-nj-8H6" firstAttribute="trailing" secondItem="wId-b5-5mM" secondAttribute="trailing" constant="32" id="uMP-vM-Adn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buyButton" destination="ll0-wE-ksv" id="Ieh-fj-dGA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XaX-Y7-htD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="152" y="1589"/>
+        </scene>
         <!--Navigation View Controller-->
         <scene sceneID="rBd-mM-hUU">
             <objects>
@@ -834,6 +890,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

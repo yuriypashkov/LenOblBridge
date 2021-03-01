@@ -30,6 +30,10 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
             if let url = URL(string: currentInfoModel.url), UIApplication.shared.canOpenURL(url) {
                 cell?.lightningCell()
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                let storyboard = UIStoryboard.init(name: "Main", bundle: .main)
+                let purchaseViewController = storyboard.instantiateViewController(withIdentifier: "PurchaseViewController")
+                present(purchaseViewController, animated: true, completion: nil)
             }
         }
     }
