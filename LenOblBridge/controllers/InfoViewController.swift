@@ -4,14 +4,13 @@ import MessageUI
 
 class InfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
     
-    let infoModel = InfoModel()
+    @IBOutlet weak var tableViewBottomConstraint: NSLayoutConstraint!
+    var infoModel = InfoModel()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return infoModel.data.count
     }
-    
-    
-    
+
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
     }
@@ -19,23 +18,46 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentInfoModel = infoModel[indexPath.row]
         let cell = tableView.cellForRow(at: indexPath)
-        
-        if currentInfoModel.isEmail {
+        switch currentInfoModel.cellType {
+        case .email:
             cell?.lightningCell()
             if MFMailComposeViewController.canSendMail() {
                 sendEmail()
             }
-        }
-        else {
+        case .rank:
+            cell?.lightningCell()
             if let url = URL(string: currentInfoModel.url), UIApplication.shared.canOpenURL(url) {
-                cell?.lightningCell()
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            } else {
-                let storyboard = UIStoryboard.init(name: "Main", bundle: .main)
-                let purchaseViewController = storyboard.instantiateViewController(withIdentifier: "PurchaseViewController")
-                present(purchaseViewController, animated: true, completion: nil)
             }
+        case .header:
+            ()
+        case .purchase:
+            cell?.lightningCell()
+            let storyboard = UIStoryboard.init(name: "Main", bundle: .main)
+            let purchaseViewController = storyboard.instantiateViewController(withIdentifier: "PurchaseViewController") as! PurchaseViewController
+            purchaseViewController.modalPresentationStyle = .fullScreen
+            purchaseViewController.delegate = self
+            present(purchaseViewController, animated: true, completion: nil)
         }
+        
+//        if currentInfoModel.isEmail {
+//            cell?.lightningCell()
+//            if MFMailComposeViewController.canSendMail() {
+//                sendEmail()
+//            }
+//        }
+//        else {
+//            if let url = URL(string: currentInfoModel.url), UIApplication.shared.canOpenURL(url) {
+//                cell?.lightningCell()
+//                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//            } else {
+//                let storyboard = UIStoryboard.init(name: "Main", bundle: .main)
+//                let purchaseViewController = storyboard.instantiateViewController(withIdentifier: "PurchaseViewController") as! PurchaseViewController
+//                purchaseViewController.modalPresentationStyle = .fullScreen
+//                purchaseViewController.delegate = self
+//                present(purchaseViewController, animated: true, completion: nil)
+//            }
+//        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,6 +81,15 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // состояние рекламы
+        setBottomConstraint(constraint: tableViewBottomConstraint)
+        
+        if !UserDefaults.standard.bool(forKey: "isPurchaseADCancelDone") {
+            let adCell = InfoCellData(imageName: "iconPurchase", title: "Убрать рекламу", aboutText: "Заплатить 99 р. и убрать рекламу из приложения", cellType: .purchase)
+            infoModel.data.append(adCell)
+        }
+        
         navigationController?.navigationBar.topItem?.backButtonTitle = "Назад"
     }
     
@@ -70,6 +101,17 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
         mail.setSubject("Сообщение из приложения Мосты Ленинградской Области")
         mail.setMessageBody("Версия iOS: \(osVersion)</p><p>Напишите что-нибудь:</p><br><br><br><br>", isHTML: true)
         present(mail, animated: true, completion: nil)
+    }
+    
+}
+
+extension InfoViewController: InfoDelegate {
+    
+    func removeCellAndReloadTable() {
+        if infoModel.data.count > 3 {
+            infoModel.data.removeLast()
+            tableView.reloadData()
+        }
     }
     
 }

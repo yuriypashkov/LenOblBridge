@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2118B92825E7D2D5001C1382 /* Purchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2118B92725E7D2D5001C1382 /* Purchases.swift */; };
 		2118B92B25ED7D59001C1382 /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2118B92A25ED7D59001C1382 /* PurchaseViewController.swift */; };
+		2118B92E25EE93B9001C1382 /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2118B92D25EE93B9001C1382 /* PurchaseManager.swift */; };
+		2118B93525EFB035001C1382 /* CustomTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2118B93425EFB035001C1382 /* CustomTabController.swift */; };
 		21200ED2256EBC6F00EE43B1 /* HeaderAboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21200ED1256EBC6F00EE43B1 /* HeaderAboutCell.swift */; };
 		21200ED5256EBC8C00EE43B1 /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21200ED4256EBC8C00EE43B1 /* AboutCell.swift */; };
 		21200ED8256EBCE100EE43B1 /* InfoCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21200ED7256EBCE100EE43B1 /* InfoCellData.swift */; };
@@ -37,6 +39,8 @@
 		1F3071023D0D70CBCE2336AA /* Pods-LenOblBridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LenOblBridge.release.xcconfig"; path = "Target Support Files/Pods-LenOblBridge/Pods-LenOblBridge.release.xcconfig"; sourceTree = "<group>"; };
 		2118B92725E7D2D5001C1382 /* Purchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchases.swift; sourceTree = "<group>"; };
 		2118B92A25ED7D59001C1382 /* PurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
+		2118B92D25EE93B9001C1382 /* PurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
+		2118B93425EFB035001C1382 /* CustomTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabController.swift; sourceTree = "<group>"; };
 		21200ED1256EBC6F00EE43B1 /* HeaderAboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAboutCell.swift; sourceTree = "<group>"; };
 		21200ED4256EBC8C00EE43B1 /* AboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
 		21200ED7256EBCE100EE43B1 /* InfoCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellData.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 				21200ECF256EBB9A00EE43B1 /* info */,
 				21FA9769251BD0D2001927E1 /* Bridge.swift */,
 				2118B92725E7D2D5001C1382 /* Purchases.swift */,
+				2118B92D25EE93B9001C1382 /* PurchaseManager.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				21FA976F251CEC4C001927E1 /* FullScreenImageViewController.swift */,
 				21465E6D253721D100910C86 /* InfoViewController.swift */,
 				2118B92A25ED7D59001C1382 /* PurchaseViewController.swift */,
+				2118B93425EFB035001C1382 /* CustomTabController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -322,12 +328,14 @@
 				21200EDC256EBD7600EE43B1 /* InfoModel.swift in Sources */,
 				21FA976E251C04EE001927E1 /* Extensions.swift in Sources */,
 				21AC9E682572EA4A00F4ABDF /* NetworkModel.swift in Sources */,
+				2118B93525EFB035001C1382 /* CustomTabController.swift in Sources */,
 				2118B92825E7D2D5001C1382 /* Purchases.swift in Sources */,
 				21FA976A251BD0D2001927E1 /* Bridge.swift in Sources */,
 				21AC9E6E2575AD3800F4ABDF /* SelectableLabel.swift in Sources */,
 				21200ED2256EBC6F00EE43B1 /* HeaderAboutCell.swift in Sources */,
 				21200ED5256EBC8C00EE43B1 /* AboutCell.swift in Sources */,
 				21FA977F252610F8001927E1 /* NavigationViewController.swift in Sources */,
+				2118B92E25EE93B9001C1382 /* PurchaseManager.swift in Sources */,
 				21200ED8256EBCE100EE43B1 /* InfoCellData.swift in Sources */,
 				21AD31D1256C588000A3B77E /* MainTableCell.swift in Sources */,
 				21F48CF8250040D2005E2646 /* SceneDelegate.swift in Sources */,

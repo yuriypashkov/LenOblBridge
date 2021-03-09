@@ -1,6 +1,7 @@
 
 import Foundation
 import UIKit
+import GoogleMobileAds
 
 // расширение для отрисовки градиентов
 extension CAGradientLayer {
@@ -120,5 +121,26 @@ extension String {
     }
 }
 
+// enum for purchase error
+enum PurchasesError: Error {
+    case purchaseInProgress
+    case productNotFound
+    case doNotCanMakePayments
+    case unknown
+}
+
+extension UIViewController {
+    
+    func setBottomConstraint(constraint: NSLayoutConstraint) {
+        if UserDefaults.standard.bool(forKey: "isPurchaseADCancelDone") {
+            constraint.constant = 0
+        }
+    }
+    
+}
+
+protocol InfoDelegate: class {
+    func removeCellAndReloadTable()
+}
 
 

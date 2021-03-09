@@ -13,6 +13,7 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var errorButton: UIButton!
+    @IBOutlet weak var mapViewBottomConstraint: NSLayoutConstraint!
     
     @IBAction func errorButtonTap(_ sender: UIButton) {
         loadData()
@@ -22,6 +23,9 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
+        
+        // проверяем состояние показа рекламы
+        setBottomConstraint(constraint: mapViewBottomConstraint)
         
         errorButton.layer.cornerRadius = 8
         errorButton.layer.masksToBounds = true

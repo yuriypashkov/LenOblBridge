@@ -1,6 +1,7 @@
 
 import UIKit
 import GoogleMobileAds
+import StoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -9,7 +10,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        PurchaseManager.shared.fetchProducts()
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        SKPaymentQueue.default().add(PurchaseManager.shared)
         return true
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        SKPaymentQueue.default().remove(PurchaseManager.shared)
     }
 
     // MARK: UISceneSession Lifecycle
@@ -18,8 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
-        
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
     

@@ -20,8 +20,8 @@ class BridgeViewController: UIViewController {
     @IBOutlet weak var lengthValueLabel: UILabel!
     @IBOutlet weak var widthValueLabel: UILabel!
     @IBOutlet weak var architectValueLabel: UILabel!
-    //@IBOutlet weak var engineerValueLabel: UILabel!
     @IBOutlet weak var engineerValueLabel: SelectableLabel!
+    @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
     
     
     @IBOutlet weak var shareButton: UIButton!
@@ -42,9 +42,13 @@ class BridgeViewController: UIViewController {
     
     var currentBridge: Bridge!
     var bridgeAnnotation: BridgeAnnotation!
+    //var tabBar: CustomTabController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setBottomConstraint(constraint: scrollViewBottomConstraint)
+        
         // настройка контроллера и карты
         navigationController?.navigationBar.topItem?.backButtonTitle = "Назад"
         setupLabels()
@@ -71,11 +75,15 @@ class BridgeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = false
         navigationController?.hidesBarsOnTap = false
-        tabBarController?.tabBar.isHidden = true
+        //tabBarController?.tabBar.isHidden = true
+        //tabBar?.tabBar.isHidden = true
+        //tabBar?.containerView.alpha = 0
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        tabBarController?.tabBar.isHidden = false
+        //tabBarController?.tabBar.isHidden = false
+        //tabBar?.tabBar.isHidden = false
+        //tabBar?.containerView.alpha = 1
     }
     
     @objc func imageTapped(_ sender: UITapGestureRecognizer) {

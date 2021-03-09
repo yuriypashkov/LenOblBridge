@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var errorView: UIView!
     @IBOutlet weak var errorViewLabel: UILabel!
-    @IBOutlet weak var adView: GADBannerView!
+    @IBOutlet weak var tableViewBottomConstraint: NSLayoutConstraint!
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -42,14 +42,19 @@ class MainViewController: UIViewController {
     
     // must strong IBOutlet иначе значение не возвращается после отмены поиска
     @IBOutlet var searchButton: UIBarButtonItem!
-    //@IBOutlet var infoButton: UIBarButtonItem!
     
     @IBAction func searchButtonTap(_ sender: UIBarButtonItem) {
         self.navigationItem.titleView = searchController.searchBar
         self.navigationItem.leftBarButtonItem = nil
-        //self.navigationItem.rightBarButtonItem = nil
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.becomeFirstResponder()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        // ad banner
+        
+        //setupADView()
     }
     
     override func viewDidLoad() {
@@ -57,13 +62,10 @@ class MainViewController: UIViewController {
         // иконки для iOS < 13
         if #available(iOS 13.0, *) {} else {
             navigationItem.leftBarButtonItem?.image = UIImage(named: "search25px")
-            //navigationItem.rightBarButtonItem?.image = UIImage(named: "info35px")
         }
-        // ad banner
-        adView.rootViewController = self
-        adView.adUnitID = "ca-app-pub-7211921803083081/6283013149"
-        adView.load(GADRequest())
-        
+        // проверяем состояние показа рекламы
+        setBottomConstraint(constraint: tableViewBottomConstraint)
+
         // загружаем данные
         reloadData()
 
@@ -86,9 +88,6 @@ class MainViewController: UIViewController {
         // подключаем pull refresh
         mainRefreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
         tableView.refreshControl = mainRefreshControl
-        
-        //tabBarController?.tabBarItem.title = nil
-        //tabBarController?.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
     }
     
     func reloadData() {
