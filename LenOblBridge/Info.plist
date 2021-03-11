@@ -31,6 +31,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Для сохранения изображения нужен доступ к приложению Фото</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
@@ -76,8 +78,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>NSPhotoLibraryAddUsageDescription</key>
-    <string>Для сохранения изображения нужен доступ к приложению Фото</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
 </dict>
