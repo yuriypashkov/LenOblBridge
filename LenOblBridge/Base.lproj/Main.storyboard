@@ -256,7 +256,7 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
-                                                        <state key="normal" image="shareFive">
+                                                        <state key="normal" image="shareNew">
                                                             <color key="titleColor" systemColor="groupTableViewBackgroundColor"/>
                                                         </state>
                                                         <connections>
@@ -935,7 +935,7 @@
         <image name="iconCancel" width="64" height="64"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="mainInvert300" width="300" height="300"/>
-        <image name="shareFive" width="128" height="128"/>
+        <image name="shareNew" width="60" height="60"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

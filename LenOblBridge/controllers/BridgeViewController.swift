@@ -42,7 +42,6 @@ class BridgeViewController: UIViewController {
     
     var currentBridge: Bridge!
     var bridgeAnnotation: BridgeAnnotation!
-    //var tabBar: CustomTabController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +60,7 @@ class BridgeViewController: UIViewController {
         }
         // делегат для использования annotationView
         mapView.delegate = self
-
+        
         // обработчик тапа по картинке с мостом
         photoImageView.isUserInteractionEnabled = true
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
@@ -75,15 +74,6 @@ class BridgeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = false
         navigationController?.hidesBarsOnTap = false
-        //tabBarController?.tabBar.isHidden = true
-        //tabBar?.tabBar.isHidden = true
-        //tabBar?.containerView.alpha = 0
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        //tabBarController?.tabBar.isHidden = false
-        //tabBar?.tabBar.isHidden = false
-        //tabBar?.containerView.alpha = 1
     }
     
     @objc func imageTapped(_ sender: UITapGestureRecognizer) {
@@ -101,7 +91,6 @@ class BridgeViewController: UIViewController {
         bridgeTitleLabel.text = currentBridge.title
         if let url = URL(string: currentBridge.mainImageURL!) {
             photoImageView.kf.indicatorType = .activity
-            //photoImageView.kf.setImage(with: url)
             photoImageView.kf.setImage(with: url, placeholder: nil, options: nil, progressBlock: nil) { (_) in
                 UIView.animate(withDuration: 0.5) {
                     self.shareButton.alpha = 1.0

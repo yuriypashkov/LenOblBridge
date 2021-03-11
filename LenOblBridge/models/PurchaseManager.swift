@@ -12,13 +12,11 @@ import StoreKit
 final class PurchaseManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
 
     var products = [SKProduct]()
-    //var completion: ((Bool) -> Void)?
     var completion: ((Result<Bool, Error>) -> Void)?
 
     static let shared = PurchaseManager()
     
     func fetchProducts() {
-//        SKPaymentQueue.default().add(self)
         let request = SKProductsRequest(productIdentifiers: ["lenOblBridgeAdCancel"])
         request.delegate = self
         request.start()
@@ -48,7 +46,6 @@ final class PurchaseManager: NSObject, SKProductsRequestDelegate, SKPaymentTrans
         self.completion = completion
         
         let paymentRequest = SKPayment(product: storeKitProduct)
-        //SKPaymentQueue.default().add(self) // создание наблюдателя можно повесить в AppDelegate и удалять его по заврешению приложения
         SKPaymentQueue.default().add(paymentRequest)
     }
     
@@ -59,19 +56,20 @@ final class PurchaseManager: NSObject, SKProductsRequestDelegate, SKPaymentTrans
         }
         
         self.completion = completion
-        //SKPaymentQueue.default().add(self)
         SKPaymentQueue.default().restoreCompletedTransactions()
         
     }
 
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-        //for transaction in queue.transactions {
-        print("PURCHASE RESTORED: \(queue.transactions)")
-        //}
+        // если идет попытка восстановить несовершенную покупку
+        if queue.transactions.isEmpty {
+            completion?(.success(false))
+        }
     }
     
+    
     func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
-        print("RESTORE WITH ERROR METHOD")
+        completion?(.success(false))
     }
     
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
@@ -89,11 +87,7 @@ final class PurchaseManager: NSObject, SKProductsRequestDelegate, SKPaymentTrans
                     completion?(.failure(PurchasesError.unknown))
                 }
             case .failed:
-                guard let skError = transaction.error as? SKError else {
-                    print("NO CAST")
-                    return}
-                
-                print(skError.code.self)
+                guard let skError = transaction.error as? SKError else { return }
                 if skError.code == .paymentCancelled {
                     completion?(.success(false))
                 } else {
@@ -102,15 +96,11 @@ final class PurchaseManager: NSObject, SKProductsRequestDelegate, SKPaymentTrans
                 SKPaymentQueue.default().finishTransaction(transaction)
                 self.completion = nil // как будто нужно здесь, для обработки кнопки Отмена или ошибка при платеже
             default:
-                print("DEFAULT") // сюда заходит при попытке повторной покупки
+                // сюда заходит при попытке повторной покупки
                 break
             }
         }
-        
-        //completion = nil
     }
-    
-    //applicationWillTerminate
     
     func myFinishTransaction(_ transaction: SKPaymentTransaction) -> Bool {
         let productId = transaction.payment.productIdentifier

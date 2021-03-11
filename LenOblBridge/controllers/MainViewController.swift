@@ -2,15 +2,6 @@
 import UIKit
 import GoogleMobileAds
 
-//protocol MainDelegate: class {
-//    func tableViewReload()
-//    func updateInternetErrorLabel(showError: Bool, isSomeContent: Bool, textError: String)
-//    var activityIndicator: UIActivityIndicatorView {get}
-//}
-
-// app uid: ca-app-pub-7211921803083081~5736218234
-// first banner uid: ca-app-pub-7211921803083081/6283013149
-
 class MainViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -48,13 +39,6 @@ class MainViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = nil
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.becomeFirstResponder()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        // ad banner
-        
-        //setupADView()
     }
     
     override func viewDidLoad() {

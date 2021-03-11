@@ -22,7 +22,7 @@ class PurchaseViewController: UIViewController {
     
     let activityIndicator = UIActivityIndicatorView()
     
-    var delegate: InfoDelegate?
+    weak var delegate: InfoDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,10 +118,9 @@ class PurchaseViewController: UIViewController {
     private func dismissController() {
         dismiss(animated: true) {
             if UserDefaults.standard.bool(forKey: "isPurchaseADCancelDone") {
-                print("DELETE CELL")
                 self.delegate?.removeCellAndReloadTable()
             } else {
-                print("NOT DELETE CELL")
+                // nothing
             }
         }
     }

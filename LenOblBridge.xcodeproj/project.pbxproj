@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2118B92825E7D2D5001C1382 /* Purchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2118B92725E7D2D5001C1382 /* Purchases.swift */; };
 		2118B92B25ED7D59001C1382 /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2118B92A25ED7D59001C1382 /* PurchaseViewController.swift */; };
 		2118B92E25EE93B9001C1382 /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2118B92D25EE93B9001C1382 /* PurchaseManager.swift */; };
 		2118B93525EFB035001C1382 /* CustomTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2118B93425EFB035001C1382 /* CustomTabController.swift */; };
@@ -16,6 +15,7 @@
 		21200ED8256EBCE100EE43B1 /* InfoCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21200ED7256EBCE100EE43B1 /* InfoCellData.swift */; };
 		21200EDC256EBD7600EE43B1 /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21200EDB256EBD7600EE43B1 /* InfoModel.swift */; };
 		21465E6E253721D100910C86 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21465E6D253721D100910C86 /* InfoViewController.swift */; };
+		219C632F25FA89E800053FD7 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C632E25FA89E800053FD7 /* NavigationViewController.swift */; };
 		21AC9E642572E42300F4ABDF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC9E632572E42300F4ABDF /* MapViewController.swift */; };
 		21AC9E682572EA4A00F4ABDF /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC9E672572EA4A00F4ABDF /* NetworkModel.swift */; };
 		21AC9E6E2575AD3800F4ABDF /* SelectableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC9E6D2575AD3800F4ABDF /* SelectableLabel.swift */; };
@@ -31,13 +31,11 @@
 		21FA976E251C04EE001927E1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA976D251C04EE001927E1 /* Extensions.swift */; };
 		21FA9771251CEC4C001927E1 /* FullScreenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA976F251CEC4C001927E1 /* FullScreenImageViewController.swift */; };
 		21FA9772251CEC4C001927E1 /* FullScreenImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21FA9770251CEC4C001927E1 /* FullScreenImageViewController.xib */; };
-		21FA977F252610F8001927E1 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FA977E252610F8001927E1 /* NavigationViewController.swift */; };
 		6049CB66BF9744E9254FE13D /* Pods_LenOblBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892D597C0DB81027529C293C /* Pods_LenOblBridge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F3071023D0D70CBCE2336AA /* Pods-LenOblBridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LenOblBridge.release.xcconfig"; path = "Target Support Files/Pods-LenOblBridge/Pods-LenOblBridge.release.xcconfig"; sourceTree = "<group>"; };
-		2118B92725E7D2D5001C1382 /* Purchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchases.swift; sourceTree = "<group>"; };
 		2118B92A25ED7D59001C1382 /* PurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
 		2118B92D25EE93B9001C1382 /* PurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
 		2118B93425EFB035001C1382 /* CustomTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabController.swift; sourceTree = "<group>"; };
@@ -46,6 +44,7 @@
 		21200ED7256EBCE100EE43B1 /* InfoCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellData.swift; sourceTree = "<group>"; };
 		21200EDB256EBD7600EE43B1 /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
 		21465E6D253721D100910C86 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		219C632E25FA89E800053FD7 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		21AC9E632572E42300F4ABDF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		21AC9E672572EA4A00F4ABDF /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
 		21AC9E6D2575AD3800F4ABDF /* SelectableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableLabel.swift; sourceTree = "<group>"; };
@@ -63,7 +62,6 @@
 		21FA976D251C04EE001927E1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		21FA976F251CEC4C001927E1 /* FullScreenImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageViewController.swift; sourceTree = "<group>"; };
 		21FA9770251CEC4C001927E1 /* FullScreenImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullScreenImageViewController.xib; sourceTree = "<group>"; };
-		21FA977E252610F8001927E1 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		329358CCB52E27082F6D5FD9 /* Pods-LenOblBridge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LenOblBridge.debug.xcconfig"; path = "Target Support Files/Pods-LenOblBridge/Pods-LenOblBridge.debug.xcconfig"; sourceTree = "<group>"; };
 		892D597C0DB81027529C293C /* Pods_LenOblBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LenOblBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -158,7 +156,6 @@
 			children = (
 				21200ECF256EBB9A00EE43B1 /* info */,
 				21FA9769251BD0D2001927E1 /* Bridge.swift */,
-				2118B92725E7D2D5001C1382 /* Purchases.swift */,
 				2118B92D25EE93B9001C1382 /* PurchaseManager.swift */,
 			);
 			path = models;
@@ -168,8 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				21F48CF9250040D2005E2646 /* MainViewController.swift */,
-				21FA977E252610F8001927E1 /* NavigationViewController.swift */,
 				21AC9E632572E42300F4ABDF /* MapViewController.swift */,
+				219C632E25FA89E800053FD7 /* NavigationViewController.swift */,
 				21FA9765251173DD001927E1 /* BridgeViewController.swift */,
 				21FA976F251CEC4C001927E1 /* FullScreenImageViewController.swift */,
 				21465E6D253721D100910C86 /* InfoViewController.swift */,
@@ -328,13 +325,12 @@
 				21200EDC256EBD7600EE43B1 /* InfoModel.swift in Sources */,
 				21FA976E251C04EE001927E1 /* Extensions.swift in Sources */,
 				21AC9E682572EA4A00F4ABDF /* NetworkModel.swift in Sources */,
+				219C632F25FA89E800053FD7 /* NavigationViewController.swift in Sources */,
 				2118B93525EFB035001C1382 /* CustomTabController.swift in Sources */,
-				2118B92825E7D2D5001C1382 /* Purchases.swift in Sources */,
 				21FA976A251BD0D2001927E1 /* Bridge.swift in Sources */,
 				21AC9E6E2575AD3800F4ABDF /* SelectableLabel.swift in Sources */,
 				21200ED2256EBC6F00EE43B1 /* HeaderAboutCell.swift in Sources */,
 				21200ED5256EBC8C00EE43B1 /* AboutCell.swift in Sources */,
-				21FA977F252610F8001927E1 /* NavigationViewController.swift in Sources */,
 				2118B92E25EE93B9001C1382 /* PurchaseManager.swift in Sources */,
 				21200ED8256EBCE100EE43B1 /* InfoCellData.swift in Sources */,
 				21AD31D1256C588000A3B77E /* MainTableCell.swift in Sources */,
@@ -496,7 +492,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.myOrg.LenOblBridge;
 				PRODUCT_NAME = "Мосты Ленобласти";
 				SWIFT_VERSION = 5.0;
@@ -518,7 +514,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.myOrg.LenOblBridge;
 				PRODUCT_NAME = "Мосты Ленобласти";
 				SWIFT_VERSION = 5.0;

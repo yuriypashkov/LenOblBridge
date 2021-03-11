@@ -39,25 +39,6 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
             purchaseViewController.delegate = self
             present(purchaseViewController, animated: true, completion: nil)
         }
-        
-//        if currentInfoModel.isEmail {
-//            cell?.lightningCell()
-//            if MFMailComposeViewController.canSendMail() {
-//                sendEmail()
-//            }
-//        }
-//        else {
-//            if let url = URL(string: currentInfoModel.url), UIApplication.shared.canOpenURL(url) {
-//                cell?.lightningCell()
-//                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-//            } else {
-//                let storyboard = UIStoryboard.init(name: "Main", bundle: .main)
-//                let purchaseViewController = storyboard.instantiateViewController(withIdentifier: "PurchaseViewController") as! PurchaseViewController
-//                purchaseViewController.modalPresentationStyle = .fullScreen
-//                purchaseViewController.delegate = self
-//                present(purchaseViewController, animated: true, completion: nil)
-//            }
-//        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
