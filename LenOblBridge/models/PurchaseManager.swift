@@ -81,19 +81,18 @@ final class PurchaseManager: NSObject, SKProductsRequestDelegate, SKPaymentTrans
                if myFinishTransaction(transaction) {
                     completion?(.success(true))
                     SKPaymentQueue.default().finishTransaction(transaction)
-                    //SKPaymentQueue.default().remove(self) // если покупок в приложении больше одной - удалять наблюдатель нельзя
                     self.completion = nil // по идее тоже надо очищать колбэк (хотя у нас одна покупка и можно не очищать)
                 } else {
                     completion?(.failure(PurchasesError.unknown))
                 }
             case .failed:
+                SKPaymentQueue.default().finishTransaction(transaction)
                 guard let skError = transaction.error as? SKError else { return }
                 if skError.code == .paymentCancelled {
                     completion?(.success(false))
                 } else {
                     completion?(.failure(transaction.error ?? PurchasesError.unknown))
                 }
-                SKPaymentQueue.default().finishTransaction(transaction)
                 self.completion = nil // как будто нужно здесь, для обработки кнопки Отмена или ошибка при платеже
             default:
                 // сюда заходит при попытке повторной покупки
